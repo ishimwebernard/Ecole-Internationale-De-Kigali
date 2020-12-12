@@ -89,7 +89,26 @@
     opacity: 90%;
 }
 
-
+.mobilemenu{
+    position: absolute;
+    z-index: 5;
+    display: none;
+    grid-template-columns: 3fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+.mobilemenu .mainNavItems{
+    background: #fff;
+}
+.mobilemenu .empty{
+    background: #000;
+    opacity: 40%;
+}
+.mobilemenu .mainNavItems .mobileNavItem{
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left: 10%;
+}
 
 
 

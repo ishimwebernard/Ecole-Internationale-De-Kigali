@@ -9,10 +9,25 @@
     <title>Ecole International De Kigali</title>
 </head>
 <body>
+    
     <div class="content">
+        <div class="mobilemenu" id="mobilemenu">
+            <div class="mainNavItems">
+                <p class="mobileNavItem">Home</p>
+                <p class="mobileNavItem">Our School</p>
+                <p class="mobileNavItem">Strategy</p>
+                <p class="mobileNavItem">Environment</p>
+                <p class="mobileNavItem">Health and safety</p>
+                <p class="mobileNavItem">Student Portal</p>
+                <p class="mobileNavItem">Contact</p>
+                <p class="mobileNavItem">Video Portal</p>
+
+            </div>
+            <div class="empty" onclick="revealHideMobileMenu()"> </div>
+        </div>
         <div class="row1">
-            <img src="./assets/images/schoollogo.png" alt="" class="logo">
-            <div class="navgroup">
+            <img src="./assets/images/schoollogo.png" id="schoollogo" alt="" class="logo">
+            <div class="navgroup" id="navgroup">
                 <div class="navItems">
                     <p class="navItem">Home</p>
                     <p class="navItem">Our School</p>
@@ -23,7 +38,7 @@
                     <p class="navItem">Contact</p>
                     <p class="navItem">Video Portal</p>
                 </div>
-                <div class="hamburger">
+                <div class="hamburger" onclick="revealHideMobileMenu()">
                     <div class="line"> </div>
                     <div class="line"> </div>
                     <div class="line"> </div>
@@ -31,14 +46,14 @@
                 </div>
             </div>
         </div>
-        <div class="row12">
+        <div class="row12" id="slide">
             <img src="./assets/images/slideshare1.png" alt="">
         </div>
-        <div class="row2">
-            <div class="titles">
+        <div class="row2" id="row2">
+            <div class="titles" id="titles">
                 <h3 class="title">Ecole International de KIGALI</h3>
             </div>
-            <p class="welcomesession">
+            <p class="welcomesession" id="welcomesession">
                 Ecole International de KIGALI welcomes you to the online platform. Morbi aliquam a turpis eget congue. Aliquam non mauris non dui pulvinar bibendum ac eget nulla. Integer a metus sollicitudin, luctus nunc eu, posuere massa. Cras id dui non nunc accumsan elementum id id felis. Fusce sed convallis justo. Mauris   School <br><br>Moto  <br><br>Ecole international de KIGALI           
              </p>
         </div>
@@ -213,5 +228,8 @@
 
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
