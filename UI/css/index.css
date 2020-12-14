@@ -74,19 +74,54 @@
     margin-left: 2.44648318042813%;
     font-size: 1rem;
     opacity: 90%;
+    cursor: pointer;
 }
 .row1 .navgroup .navItems .navItem:first-child{
     color: #fdad00;
 }
-.row1 img{
-    height: 100%;
-}
+
 .row12{
-    background: #E4F5FD;
     padding:0;
 }
-.row12 img{
-    opacity: 90%;
+.row12 .slide{
+    background-image: url('../assets/images/Image9.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    animation-name: _FILLERANIMATOR;
+    animation-timing-function: .5s;
+}
+.row12 .slide .filler{
+    background: #000;
+    opacity: 40%;
+    width: 100%;
+    height: 100%;
+    animation-name: _FILLERANIMATOR;
+    animation-timing-function: .5s;
+}
+
+@keyframes _FILLERANIMATOR{
+    from{width: 0%;}
+    to{width: 100%;}
+}
+.row12 .slide p{
+    position: absolute;
+    color: #fff;
+    bottom: 10rem;
+    font-size: 4rem;
+    text-align: center;
+    width: 100%; 
+    
+}
+.row12 .slide span{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+@keyframes TEXTANIMATOR{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
 }
 
 .mobilemenu{
@@ -162,6 +197,20 @@
 
 .row3 .card-au-pair .card img{
     height: 4.3125rem;
+}
+
+
+
+/*IMAGES FOR SLIDESHOW*/
+#fade2{
+    background-image: url('../assets/images/Image45.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#fade3{
+    background-image: url('../assets/images/Image27.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .row4{
     background-color: #fdad00;
