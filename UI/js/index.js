@@ -61,3 +61,13 @@ window.addEventListener("scroll", function() {
     
     setTimeout(showSlides, 4000); // Change image every 2 seconds
   }
+  function switchTab(n){
+    var _CARD = document.getElementsByClassName('CARD');
+    var _CNAV = document.getElementsByClassName('gallerynavigatorItem');
+    for(let _SAMPLECARD of _CARD){
+      _SAMPLECARD.style.display = "none";
+    }
+    _CARD[n].style.display = "block";
+    _SAMPLECARD[n].style.color = "#fff";
+    _SAMPLECARD[n].style.background = "#000";
+  }

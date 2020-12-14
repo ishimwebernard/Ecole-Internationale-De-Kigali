@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../css/ourschool.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
+    <title>Ecole International De Kigali</title>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="mobilemenu" id="mobilemenu">
+            <div class="mainNavItems">
+                <p class="mobileNavItem">Home</p>
+                <p class="mobileNavItem">Our School</p>
+                <p class="mobileNavItem">Strategy</p>
+                <p class="mobileNavItem">Environment</p>
+                <p class="mobileNavItem">Health and safety</p>
+                <p class="mobileNavItem">Student Portal</p>
+                <p class="mobileNavItem">Contact</p>
+                <p class="mobileNavItem">Video Portal</p>
+
+            </div>
+            <div class="empty" onclick="revealHideMobileMenu()"> </div>
+        </div>
+        <div class="row1">
+            <img src="../assets/images/schoollogo.png" id="schoollogo" alt="" class="logo">
+            <div class="navgroup" id="navgroup">
+                <div class="navItems">
+                    <p class="navItem">Home</p>
+                    <p class="navItem">Our School</p>
+                    <p class="navItem">Strategy</p>
+                    <p class="navItem">Environment</p>
+                    <p class="navItem">Health and Safety</p>
+                    <p class="navItem">Student Portal</p>
+                    <p class="navItem">Contact</p>
+                    <p class="navItem">Video Portal</p>
+                </div>
+                <div class="hamburger" onclick="revealHideMobileMenu()">
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="gallerynavigator">
+                <p class="gallerynavigatorItem" onclick="switchTab(0)">School History</p>
+                <p class="gallerynavigatorItem" onclick="switchTab(1)">Overall Objective</p>
+                <p class="gallerynavigatorItem" onclick="switchTab(2)">Specific Objectives</p>
+                <p class="gallerynavigatorItem" onclick="switchTab(3)">Support</p>
+                <p class="gallerynavigatorItem" onclick="switchTab(4)">Facilities</p>
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="presenter">
+                </div>
+                <h2>How the school was started</h2>
+                <p>
+                    The idea of ​​opening a school was created in 1997 to meet the needs of parents who wanted their children to attend classes in French, ...
+                </p>
+    
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="presenter">
+                </div>
+                <h2>The School Overall Objective</h2>
+                <p>
+                    Enable students to achieve optimal maternal and primary schooling level that have a number of students not exceeding 30 per class ...                </p>
+    
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="presenter">
+                </div>
+                <h2>Specific Objectives</h2>
+                <p>
+                    A kindergarten and a bilingual nursery school (French and English) for children 3 to 6 years, for both their mental and social development ...                </p>
+    
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="presenter">
+                </div>
+                <h2>Support</h2>
+                <p>
+                    The idea of ​​opening a school was created in 1997 to meet the needs of parents who wanted their children to attend classes in French, ...
+                </p>
+    
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="presenter">
+                </div>
+                <h2>Facilities</h2>
+                <p>
+                    The idea of ​​opening a school was created in 1997 to meet the needs of parents who wanted their children to attend classes in French, ...
+                </p>
+    
+            </div>
+     
+    </div>
+   
+
+        <div class="footer">
+            <div class="footergroup">
+                <h2>Address</h2>
+                <div class="item">
+                    <img src="./assets/images/location_vector.png" alt="">
+                    <p>KN XXX ST</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/call_vector.png" alt="">
+                    <p>+250 788 305 488</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/message_vector.png" alt="">
+                    <p>symka2001@yahoo.fr</p>
+                </div>
+            </div>
+            <div class="footergroup">
+                <h2>Follow us</h2>
+                <div class="item">
+                    <img src="./assets/images/facebook.png" alt="">
+                    <p>Facebook</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/twitter.png" alt="">
+                    <p>Twitter</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/linkedin_vector.png" alt="">
+                    <p>Linked In</p>
+                </div>
+            </div>
+
+            <div class="footergroup">
+                <h2>Subscribe</h2>
+             <input type="text" placeholder="Enter your email">
+             <button>Subscribe</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+    <script src="../js/ourschool.js"></script>
+</body>
+</html>
