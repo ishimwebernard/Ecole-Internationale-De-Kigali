@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../css/teacherpanel.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
+    <title>Ecole International De Kigali</title>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="filler" id="filler">  f</div>
+        <div class="fileUploader" id="fileUploader">
+            <h1>Material Upload Wizard</h1>
+            <input type="text" id="Subject" placeholder="Subject">
+            <input type="text" id="Title" placeholder="Title">
+            <select name="class" id="uploadClass">
+                <option value="primary1">Primary 1</option>
+                <option value="primary2">Primary 2</option>
+                <option value="primary3">Primary 3</option>
+                <option value="primary4">Primary 4</option>
+                <option value="primary5">Primary 5</option>
+            </select>
+           <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"></textarea>
+           <input type="file" name="" id="p1" hidden>
+           <label for="p1">Upload</label>
+           <button id="cancelUpload" onclick="cancelUploadF()">Cancel</button>
+
+        </div>
+        <div class="mobilemenu" id="mobilemenu">
+            <div class="mainNavItems">
+                <p class="mobileNavItem">Home</p>
+                <p class="mobileNavItem">Our School</p>
+                <p class="mobileNavItem">Strategy</p>
+                <p class="mobileNavItem">Environment</p>
+                <p class="mobileNavItem">Health and safety</p>
+                <p class="mobileNavItem">Student Portal</p>
+                <p class="mobileNavItem">Contact</p>
+                <p class="mobileNavItem">Video Portal</p>
+
+            </div>
+            <div class="empty" onclick="revealHideMobileMenu()"> </div>
+        </div>
+        <div class="row1">
+            <img src="../assets/images/schoollogo.png" id="schoollogo" alt="" class="logo">
+            <div class="navgroup" id="navgroup">
+                <div class="navItems">
+                    <p class="navItem" onclick="location.href=`index.html`">Home</p>
+                    <p class="navItem" onclick="location.href=`./pages/ourschool.html`">Our School</p>
+                    <p class="navItem" onclick="location.href=`./pages/strategy.html`">Strategy</p>
+                    <p class="navItem" onclick="location.href=`./pages/environment.html`">Environment</p>
+                    <p class="navItem">Health and Safety</p>
+                    <p class="navItem">Student Portal</p>
+                    <p class="navItem">Contact</p>
+                    <p class="navItem">Video Portal</p> 
+                </div>
+                <div class="hamburger" onclick="revealHideMobileMenu()">
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                </div>
+            </div>
+        </div>
+       <div class="elearning">
+           <div class="leftnav">
+               <p onclick="switchTab(0)">Primary</p>
+               <p onclick="switchTab(1)">Nursery</p>
+               <p onclick="switchTab(2)">Uploaded Materials</p>
+               <p>Log Out</p>
+
+           </div>
+           <div class="rightnav" id="primary">
+               <p>Primary</p>
+               <div class="class">
+                   <p>Primary One</p>
+                   <button onclick="startUploadSession()">Upload Material</button>
+               </div>
+               <div class="class">
+                <p>Primary Two</p>
+                <button>Upload Material</button>
+            </div>
+            <div class="class">
+                <p>Primary Three</p>
+                <button>Upload Material</button>
+            </div>
+           </div> 
+           <div class="rightnav" id="nursery">
+            <p>Nursery</p>
+            <div class="class">
+                <p>Nursery One</p>
+                <button>Upload Material</button>
+            </div>
+            <div class="class">
+             <p>Nursery Two</p>
+             <button>Upload Material</button>
+         </div>
+         <div class="class">
+             <p>Nursery Three</p>
+             <button>Upload Material</button>
+         </div>
+        </div>
+        <div class="rightnav" id="uploadedMaterials">
+            <p>Uploaded Materials</p>
+            <div class="um">
+                <p>Title</p>
+                <p>Target Class</p>
+                <p>Date</p>
+                <button>View Material</button>
+            </div>
+         
+        </div>
+       </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<script>
+      // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLtbU8MWi_BHunfQ7b4a6JPad0Jdmeh9E",
+    authDomain: "ecole-internationale-dekigli.firebaseapp.com",
+    projectId: "ecole-internationale-dekigli",
+    storageBucket: "ecole-internationale-dekigli.appspot.com",
+    messagingSenderId: "669208960466",
+    appId: "1:669208960466:web:07897e417b95a689cb3c0b",
+    measurementId: "G-9EKFKSTZPN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+//UPLOADING THE  LEARNING MATERIAL
+  var choosefile = document.getElementById("p1").onchange = function(){
+            var storageRef = firebase.storage().ref();
+            var toDay = new Date();
+            var userStorageRef = storageRef.child('primary1'+toDay);
+
+            const selectedFile = document.getElementById('p1').files[0];
+            userStorageRef.put(selectedFile).then(function(snapshot) {
+                
+                const fileDirectory = snapshot.ref.getDownloadURL().then(url=>{
+                    var _MATERIALURL = url;
+                    firebase.firestore().collection('assignment').doc('primary1').set({
+                        englishDate: _MATERIALURL
+                    });//6CZ6G2PlHSdlYD9bkfcYedW0JhG3
+
+                    var Subject = document.getElementById('Subject').value;
+  var Description = document.getElementById('Description').value;
+var Title = document.getElementById('Title').value;
+var uploadClass = document.getElementById('uploadClass').value;
+
+                    console.log(Title);
+                    firebase.firestore().collection('6CZ6G2PlHSdlYD9bkfcYedW0JhG3').doc(String(Title)+"-"+uploadClass+"-"+String(new Date())).set({
+                       "Subject": Subject,
+                       "Description": Description,
+                         "toDay": String(new Date()),
+                         "name": Title,
+                         "targetClass": uploadClass,
+                        "documentUrl": _MATERIALURL
+                     });
+
+
+                }).catch(error=>{
+                    alert(error);
+                    console.log(error);
+                })
+            }).catch(error=>{
+                alert(String(error));
+                console.log(error);
+            });
+
+        };
+
+
+        getUploadedMaterials();
+        function getUploadedMaterials(){
+            var uploadedMaterials = document.getElementById('uploadedMaterials');
+           firebase.firestore().collection("6CZ6G2PlHSdlYD9bkfcYedW0JhG3")
+            .onSnapshot((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        // console.log(doc.id); // For doc name
+                        // console.log(doc.data());
+                        uploadedMaterials.innerHTML+=`
+                        <div class="um">
+                            <p>${doc.data().name}</p>
+                            <p>${doc.data().targetClass}</p>
+                            <p>${doc.data().toDay}</p>
+                        <button>View Material</button>
+            </div>
+                        `;
+
+        });
+    })
+}
+function cancelUploadF(){
+    var filler = document.getElementById('filler');
+    var cancelUpload = document.getElementById('fileUploader');
+    cancelUpload.style.display = 'none';
+    filler.style.display = 'none';
+
+}
+function startUploadSession(){
+    var filler = document.getElementById('filler');
+    var cancelUpload = document.getElementById('fileUploader');
+    cancelUpload.style.display = 'flex';
+    filler.style.display = 'block';
+}
+function switchTab(n){
+    var rightnav = document.getElementsByClassName('rightnav');
+    for(let s of rightnav){
+        s.style.display = 'none';
+    }
+    rightnav[n].style.display = 'block';
+}
+      
+</script>
+
+
+
+
+
+
+</body>
+</html>

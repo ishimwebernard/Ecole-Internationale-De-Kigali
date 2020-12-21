@@ -184,7 +184,7 @@
             </div>
 
         </div>
-        <div class="row6">
+        <div class="row6" id="gallery">
             <div class="titles">
                 <h3 class="title">Gallery</h3>
             </div>
@@ -244,9 +244,139 @@
             </div>
 
         </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+    </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
-    <script src="./js/index.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script> -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+
+<script>
+
+
+
+const schoolLogo = document.getElementById("schoollogo");
+var navgroup = document.getElementById('navgroup');
+var slide = document.getElementById('slide');
+var row2 = document.getElementById('row2');
+var slideIndex = 1;
+
+
+const tl = new TimelineMax();
+
+tl.fromTo(schoolLogo, 1.5, {x: "-100%"},{x:"0%", ease: Power2.easeInOut})
+.fromTo(navgroup, 1, {opacity: 0}, {opacity: 1},"-=.5")
+.fromTo(slide,2.5,{height:0},{height:"31rem",ease: Power2.easeInOut},"-=1.5");
+showSlides();
+
+//Row 2 Animation
+
+
+function revealHideMobileMenu(){
+    var mobilemenu = document.getElementById("mobilemenu");
+    if(mobilemenu.style.display == "none"){
+        mobilemenu.style.display = "grid";
+    }else{
+        mobilemenu.style.display = "none";
+    }
+}
+
+
+
+window.addEventListener("scroll", function() {
+     var elementTarget = row2;
+     console.log("Scollin ...");
+    if (window.scrollY < (elementTarget.offsetTop + elementTarget.offsetHeight+10)) {
+        // var wc = document.getElementById('welcomesession');
+        // var titles = document.getElementById('titles');
+        // const row2Timeline = new TimelineMax();
+        // row2Timeline.fromTo(wc,1,{y:"-100%"},{y:"0%"})
+        // .fromTo(titles,1,{y:"100%"},{y:"0%"},"-=1");
+        // console.log("Boom");
+    }
+
+    
+  });
+
+  function showSlides() {
+    const _SLIDEANIMATOR = new TimelineMax();
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    var target = slides[slideIndex-1];
+    var targetParagraph = target.childNodes[3];
+    slides[slideIndex-1].style.display = "block";
+    _SLIDEANIMATOR.fromTo(target,1,{opacity: .7}, {opacity: 1})
+    .fromTo(targetParagraph, 1, {y:"100%"},{y: "0%",ease: Power2.easeInOut},"-=1");
+    
+    
+    setTimeout(showSlides, 4000); // Change image every 2 seconds
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLtbU8MWi_BHunfQ7b4a6JPad0Jdmeh9E",
+    authDomain: "ecole-internationale-dekigli.firebaseapp.com",
+    projectId: "ecole-internationale-dekigli",
+    storageBucket: "ecole-internationale-dekigli.appspot.com",
+    messagingSenderId: "669208960466",
+    appId: "1:669208960466:web:07897e417b95a689cb3c0b",
+    measurementId: "G-9EKFKSTZPN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var itemsinGallery = [];
+  const m=[];
+  var n = 0;
+  var galery = document.getElementById('gallery');
+
+  var listRef = firebase.storage().ref().child('eikcorrected');
+// Find all the prefixes and items.
+listRef.listAll().then(function(res) {
+   res.items.forEach(function(itemRef) {
+      itemRef.getDownloadURL().then(url=>{
+        itemsinGallery.push(url);
+        galery.innerHTML+=`
+        <div class="photoGalery">
+                <img src="${url}" alt="">
+            </div>
+        `;
+      });
+      
+  });
+}).catch(function(error) {
+  console.log(error);
+});
+console.log(itemsinGallery);
+for(let item in itemsinGallery){
+    console.log("I finished");
+}
+
+</script>
 </body>
 </html>
