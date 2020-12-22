@@ -11,6 +11,11 @@
 <body>
     
     <div class="content">
+        <div class="filler" id="filler">  </div>
+        <div class="loader" id="loader">
+            <img src="../assets/images/loader.gif" alt="">
+            <h1>Loading ...</h1>
+        </div>
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
                 <p class="mobileNavItem">Home</p>
@@ -46,15 +51,24 @@
                 </div>
             </div>
         </div>
-        <h1>Welcome to the Classes Portal</h1>
-        <div class="session" id="teacherSession">
-            <input type="text" name="email" id="email">
-            <input type="password" id="password">
-            <p>Or</p>
-            <input type="text" placeholder="Enter the class code" id="">
-            <button onclick="login()">Log In</button>
+       <div class="sessionContainer">
+        <div class="introducer">
+            <h1>Welcome to the online<br> learning portal</h1>
+            <p>With this portal,  students can view learning materials and other information</p>
         </div>
-        <div class="session" id="studentSession"></div>
+        <div class="session" id="teacherSession">
+            <p id="headertitle">Login as an instructor</p>
+            <input type="text" name="email" id="email" placeholder="User Email"><br>
+            <input type="password" id="password" placeholder="User Password"><br>
+            <button onclick="login()">Log In</button>
+            <br>
+            <p id="headertitle">Login as a Student</p>
+            
+            <input type="text" placeholder="Enter the class code" id=""><br>
+           
+            <button onclick="location.href=`../pages/fullportal.html`">Log In</button>
+        </div>
+       </div>
 
 
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
@@ -83,15 +97,25 @@
   function login(){
         var signPassword = document.getElementById('password');
         var signEmail = document.getElementById('email');
+        var filler = document.getElementById('filler');
+        var loader = document.getElementById('loader');
+
+        filler.style.display = "block";
+        loader.style.display = "block";
+
 	firebase.auth().signInWithEmailAndPassword(signEmail.value, signPassword.value)
   .then((user) => {
     document.cookie = `EIKLOGINID=${user.user.uid}`;
-    alert('Success');
+    location.href=`../pages/teacherpanel.html`;
+    filler.style.display = "none";
+        loader.style.display = "none";
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-	alert(errorMessage);
+    alert(errorMessage);
+    filler.style.display = "none";
+        loader.style.display = "none";
   });
   }
 </script>

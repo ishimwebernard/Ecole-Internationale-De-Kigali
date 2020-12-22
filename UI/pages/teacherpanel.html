@@ -11,8 +11,13 @@
 <body>
     
     <div class="content">
-        <div class="filler" id="filler">  f</div>
-        <div class="fileUploader" id="fileUploader">
+        <div class="filler" id="filler">  </div>
+        <div class="loader" id="loader">
+            <img src="../assets/images/loader.gif" alt="">
+            <h1>Loading ...</h1>
+        </div>
+        <!-- <div class="filler" id="filler">  f</div> -->
+        <!-- <div class="fileUploader" id="fileUploader">
             <h1>Material Upload Wizard</h1>
             <input type="text" id="Subject" placeholder="Subject">
             <input type="text" id="Title" placeholder="Title">
@@ -28,7 +33,7 @@
            <label for="p1">Upload</label>
            <button id="cancelUpload" onclick="cancelUploadF()">Cancel</button>
 
-        </div>
+        </div> -->
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
                 <p class="mobileNavItem">Home</p>
@@ -66,51 +71,40 @@
         </div>
        <div class="elearning">
            <div class="leftnav">
-               <p onclick="switchTab(0)">Primary</p>
-               <p onclick="switchTab(1)">Nursery</p>
-               <p onclick="switchTab(2)">Uploaded Materials</p>
-               <p>Log Out</p>
+               <p onclick="switchTab(0)">Material Upload Wizard</p>
+               <p onclick="switchTab(1)">Uploaded Materials</p>
+               <p onclick="logout()">Log Out</p>
 
            </div>
-           <div class="rightnav" id="primary">
-               <p>Primary</p>
-               <div class="class">
-                   <p>Primary One</p>
-                   <button onclick="startUploadSession()">Upload Material</button>
-               </div>
-               <div class="class">
-                <p>Primary Two</p>
-                <button>Upload Material</button>
+         
+           <div class="rightnav" id="uploadMaterial">
+            <div class="fileUploader" id="fileUploader">
+                <h1>Material Upload Wizard</h1>
+                <input type="text" id="Subject" placeholder="Subject">
+                <input type="text" id="Title" placeholder="Title">
+                <select name="class" id="uploadClass">
+                    <option value="primary1">Primary 1</option>
+                    <option value="primary2">Primary 2</option>
+                    <option value="primary3">Primary 3</option>
+                    <option value="primary4">Primary 4</option>
+                    <option value="primary5">Primary 5</option>
+                </select>
+               <textarea name="description" id="Description" cols="30" rows="10" placeholder="Description"></textarea>
+               <input type="file" name="" id="p1" hidden>
+               <label for="p1">Upload</label>
+    
             </div>
-            <div class="class">
-                <p>Primary Three</p>
-                <button>Upload Material</button>
-            </div>
-           </div> 
-           <div class="rightnav" id="nursery">
-            <p>Nursery</p>
-            <div class="class">
-                <p>Nursery One</p>
-                <button>Upload Material</button>
-            </div>
-            <div class="class">
-             <p>Nursery Two</p>
-             <button>Upload Material</button>
-         </div>
-         <div class="class">
-             <p>Nursery Three</p>
-             <button>Upload Material</button>
-         </div>
         </div>
         <div class="rightnav" id="uploadedMaterials">
-            <p>Uploaded Materials</p>
-            <div class="um">
-                <p>Title</p>
-                <p>Target Class</p>
-                <p>Date</p>
-                <button>View Material</button>
+            <p class="heading">Uploaded Materials</p>
+            <!-- <div class="um">
+<!-- 
+                <p class="umTitle">Title</p>
+                <p  class="umClass">Target Class</p>
+                <p class="umDate">Date</p>
+                <button class="umButton">View Material</button> -->
             </div>
-         
+          -->
         </div>
        </div>
 
@@ -135,15 +129,38 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  let _UPLOADED_MATERIALS = [];
+  let _TEACHER_PANEL = '';
+  let _TEACHER_ID='';
 
 
+  var cookies = document.cookie
+                .split(';')
+                .map(cookie => cookie.split('='))
+                .reduce((accumulator, [key, value]) => ({
+                    ...accumulator,
+                    [key.trim()]: decodeURIComponent(value)
+                }), {});
+  _TEACHER_ID = cookies.EIKLOGINID;
+  document.cookie = "EIKLOGINID=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+console.log(_TEACHER_ID);
 //UPLOADING THE  LEARNING MATERIAL
+if(String(_TEACHER_ID) =='undefined'){
+    location.href=`../index.html`;
+}
   var choosefile = document.getElementById("p1").onchange = function(){
             var storageRef = firebase.storage().ref();
             var toDay = new Date();
             var userStorageRef = storageRef.child('primary1'+toDay);
+            var uploadedMaterials = document.getElementById('uploadedMaterials');
+            var filler = document.getElementById('filler');
+            var loader = document.getElementById('loader');
+
+            
 
             const selectedFile = document.getElementById('p1').files[0];
+            filler.style.display = "block";
+            loader.style.display = "block";
             userStorageRef.put(selectedFile).then(function(snapshot) {
                 
                 const fileDirectory = snapshot.ref.getDownloadURL().then(url=>{
@@ -158,7 +175,7 @@ var Title = document.getElementById('Title').value;
 var uploadClass = document.getElementById('uploadClass').value;
 
                     console.log(Title);
-                    firebase.firestore().collection('6CZ6G2PlHSdlYD9bkfcYedW0JhG3').doc(String(Title)+"-"+uploadClass+"-"+String(new Date())).set({
+                    firebase.firestore().collection(_TEACHER_ID).doc(String(Title)+"-"+uploadClass+"-"+String(new Date())).set({
                        "Subject": Subject,
                        "Description": Description,
                          "toDay": String(new Date()),
@@ -171,7 +188,10 @@ var uploadClass = document.getElementById('uploadClass').value;
                 }).catch(error=>{
                     alert(error);
                     console.log(error);
-                })
+                });
+                filler.style.display = "none";
+            loader.style.display = "none";
+            document.cookie = `EIKLOGINID=${_TEACHER_ID}`
             }).catch(error=>{
                 alert(String(error));
                 console.log(error);
@@ -181,25 +201,47 @@ var uploadClass = document.getElementById('uploadClass').value;
 
 
         getUploadedMaterials();
-        function getUploadedMaterials(){
+       
+        async function getUploadedMaterials(){
             var uploadedMaterials = document.getElementById('uploadedMaterials');
-           firebase.firestore().collection("6CZ6G2PlHSdlYD9bkfcYedW0JhG3")
+            var filler = document.getElementById('filler');
+            var loader = document.getElementById('loader');
+
+            filler.style.display = "block";
+            loader.style.display = "block";
+           await firebase.firestore().collection(_TEACHER_ID)
             .onSnapshot((querySnapshot) => {
+                
                     querySnapshot.forEach((doc) => {
                         // console.log(doc.id); // For doc name
                         // console.log(doc.data());
                         uploadedMaterials.innerHTML+=`
                         <div class="um">
-                            <p>${doc.data().name}</p>
-                            <p>${doc.data().targetClass}</p>
-                            <p>${doc.data().toDay}</p>
-                        <button>View Material</button>
+                            <p class="umTitle">Material Title: ${doc.data().name}</p>
+                            <p class="umClass">Target Class: ${doc.data().targetClass}</p>
+                            <p class="umDate">Date Uploaded: ${doc.data().toDay}</p>
+                            <p class="umClass">Class Subject: ${doc.data().Subject}</p>
+                            <p class="umClass">Material Description: ${doc.data().Description}</p>
+                        <button onclick="window.open('${doc.data().documentUrl}', '_blank')">View Material</button>
             </div>
                         `;
+                        var objectToStore = {
+                            "Subject": doc.data().Subject,
+                       "Description": doc.data().Description,
+                         "toDay": doc.data().toDay,
+                         "name": doc.data().name,
+                         "targetClass": doc.data().targetClass,
+                        "documentUrl": doc.data().documentUrl
 
+                        }
+                        _UPLOADED_MATERIALS.push(objectToStore);
         });
-    })
+    });
+    filler.style.display = "none";
+            loader.style.display = "none";
 }
+console.log(_UPLOADED_MATERIALS);
+
 function cancelUploadF(){
     var filler = document.getElementById('filler');
     var cancelUpload = document.getElementById('fileUploader');
@@ -220,7 +262,13 @@ function switchTab(n){
     }
     rightnav[n].style.display = 'block';
 }
-      
+function logout(){
+            firebase.auth().signOut().then(()=>{
+                location.href = `../index.html`;
+            }).catch(err=>{
+
+            })
+        }      
 </script>
 
 
