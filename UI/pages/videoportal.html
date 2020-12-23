@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/videoportal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Portal</title>
+</head>
+<body>
+    <div class="content">
+        <div class="row1">
+            <img src="../assets/images/schoollogo.png" alt="">
+            <h1>Video Portal</h1>
+            <button onclick="location.href=`../index.html`">Home</button>
+        </div>
+        <div class="principle" id="principle">
+            <video id="video-element" controls>
+                <source src="https://firebasestorage.googleapis.com/v0/b/ecole-internationale-dekigli.appspot.com/o/EIK%20Summary.mp4?alt=media&token=af133303-101c-4865-8f38-1d994a3eed33" id="videoSourceHolder" type="video/mp4">
+            </video>
+            <h1 id="videoTitle">Title</h1>
+            <p id="videoSubtitle">Subtitle</p>
+        </div>
+        <div class="row2" id="row2">
+            <h2>Get all the clutter in videos</h2>
+            <!-- <div class="triple">
+                <div class="video">
+                    <div class="thumbnail"></div>
+                    <h3 class="h3">Title</h3>
+                    <p>Subtitle</p>
+                
+            </div>
+            <div class="video">
+                <div class="thumbnail"></div>
+                <h3 class="h3">Title</h3>
+                <p>Subtitle</p>
+            
+        </div>
+        <div class="video">
+            <div class="thumbnail"></div>
+            <h3 class="h3">Title</h3>
+            <p>Subtitle</p>
+        
+    </div>
+            
+        </div> -->
+        <div class="triple" id="lastVideoRow">
+
+        </div>
+    </div><!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBv1oabmJqKKc-iTg422Wx-VAmiN3W14MU",
+        authDomain: "eikvideos-95aae.firebaseapp.com",
+        projectId: "eikvideos-95aae",
+        storageBucket: "eikvideos-95aae.appspot.com",
+        messagingSenderId: "504666334221",
+        appId: "1:504666334221:web:5fcadefaedf6b0e62ea144",
+        measurementId: "G-JQ63B4NHN5"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var _ALL_VIDEOS = [];
+      var row2 = document.getElementById('row2');
+
+      getAllVideos();
+
+     async function getAllVideos(){
+          await firebase.firestore().collection('video').get().then((snapShot)=>{
+              _ALL_VIDEOS = snapShot.docs.map(doc => doc.data());
+          }); 
+          _POPULATE_VIDEOS();  
+        }
+
+
+        function _POPULATE_VIDEOS(){
+            var _VIDEO_CUBITS = _ALL_VIDEOS.length;
+            var clusters = _VIDEO_CUBITS-(_VIDEO_CUBITS%3);
+
+            console.log(_VIDEO_CUBITS);
+            console.log(_ALL_VIDEOS);
+
+            if(clusters>=3){
+                for(let _VIDEO=0; _VIDEO<clusters;_VIDEO+=3){
+
+                    row2.innerHTML += `
+                    <div class="triple">
+                    <div class="video" onclick="playVideo('${_ALL_VIDEOS[_VIDEO].videourl}'),'${_ALL_VIDEOS[_VIDEO].title}','${_ALL_VIDEOS[_VIDEO].description}'">
+                    <img src="${_ALL_VIDEOS[_VIDEO].bitmap}" class="thumbnail">
+                    <h3 class="h3">${_ALL_VIDEOS[_VIDEO].title}</h3>
+                    <p>${_ALL_VIDEOS[_VIDEO].description}</p>
+
+                    </div>
+                    <div class="video" onclick="playVideo('${_ALL_VIDEOS[_VIDEO+1].videourl}','${_ALL_VIDEOS[_VIDEO+1].title}','${_ALL_VIDEOS[_VIDEO+1].description}')">
+                    <img src="${_ALL_VIDEOS[_VIDEO+1].bitmap}" class="thumbnail">
+                    <h3 class="h3">${_ALL_VIDEOS[_VIDEO+1].title}</h3>
+                    <p>${_ALL_VIDEOS[_VIDEO+1].description}</p>
+
+                    </div>
+                    <div class="video" onclick="playVideo('${_ALL_VIDEOS[_VIDEO+2].videourl}','${_ALL_VIDEOS[_VIDEO+2].title}','${_ALL_VIDEOS[_VIDEO+2].description}')">
+                    <img src="${_ALL_VIDEOS[_VIDEO+2].bitmap}" class="thumbnail">
+                    <h3 class="h3">${_ALL_VIDEOS[_VIDEO+2].title}</h3>
+                    <p>${_ALL_VIDEOS[_VIDEO+2].description}</p>
+
+                    </div>
+
+                    </div>`;
+
+
+            }
+            showRemaining(_VIDEO_CUBITS%3);
+            }else{
+                showRemaining(_VIDEO_CUBITS);
+            }
+
+           
+        }
+
+        function showRemaining(n){
+            var length = _ALL_VIDEOS.length;
+            let finishedOnes = length-n;
+            for(let _VIDEO=length-n-1;_VIDEO<length;_VIDEO++){
+                document.getElementById('lastVideoRow').innerHTML+=`
+                <div class="video" onclick="playVideo('${_ALL_VIDEOS[_VIDEO].videourl}','${_ALL_VIDEOS[_VIDEO].title}','${_ALL_VIDEOS[_VIDEO].description}')">
+                    <img src="${_ALL_VIDEOS[_VIDEO].bitmap}" class="thumbnail">
+                    <h3 class="h3">${_ALL_VIDEOS[_VIDEO].title}</h3>
+                    <p>${_ALL_VIDEOS[_VIDEO].description}</p>
+
+                    </div>
+                `;
+            }
+           
+        }
+
+        
+        function playVideo(url,title,subtitle){
+            var videoSourceHolder = document.getElementById('videoSourceHolder');
+            var videoElement = document.getElementById('video-element');
+            var principle = document.getElementById('principle');
+            var videoTitle = document.getElementById('videoTitle');
+            var videoSubtitle = document.getElementById('videoSubtitle');
+
+            videoSourceHolder.setAttribute('src',url);
+            videoElement.load();
+            videoElement.play();
+            principle.scrollIntoView({behavior: "smooth", block: "end"});
+            videoTitle.innerText = title;
+            videoSubtitle.innerText = subtitle;
+
+        }
+    </script>
+</body>
+</html>

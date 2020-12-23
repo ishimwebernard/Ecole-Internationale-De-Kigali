@@ -16,6 +16,7 @@
             <img src="../assets/images/loader.gif" alt="">
             <h1>Loading ...</h1>
         </div>
+       
         <!-- <div class="filler" id="filler">  f</div> -->
         <!-- <div class="fileUploader" id="fileUploader">
             <h1>Material Upload Wizard</h1>
@@ -73,6 +74,7 @@
            <div class="leftnav">
                <p onclick="switchTab(0)">Material Upload Wizard</p>
                <p onclick="switchTab(1)">Uploaded Materials</p>
+               <p onclick="switchTab(2)">Upload a Video</p>
                <p onclick="logout()">Log Out</p>
 
            </div>
@@ -98,13 +100,19 @@
         <div class="rightnav" id="uploadedMaterials">
             <p class="heading">Uploaded Materials</p>
             <!-- <div class="um">
-<!-- 
+
                 <p class="umTitle">Title</p>
                 <p  class="umClass">Target Class</p>
                 <p class="umDate">Date</p>
                 <button class="umButton">View Material</button> -->
             </div>
-          -->
+            <div class="rightnav">
+                <input type="text" id="videotitle" placeholder="Video Title">
+                <input type="text" id="videodescription" placeholder="Video Description">
+                <input type="file" id="vidUpload" hidden>
+                <label for="vidUpload">Choose Video</label>
+            </div>    
+        
         </div>
        </div>
 
@@ -269,6 +277,53 @@ function logout(){
 
             })
         }      
+////////////////
+
+
+
+var chooseVideo = document.getElementById("vidUpload").onchange = function() {
+    var storageRef = firebase.storage().ref();
+    var toDay = new Date();
+    var userStorageRef = storageRef.child('video' + String(toDay));
+    var uploadedMaterials = document.getElementById('uploadedMaterials');
+    var filler = document.getElementById('filler');
+    var loader = document.getElementById('loader');
+   
+
+
+
+    const selectedFile = document.getElementById('vidUpload').files[0];
+    filler.style.display = "block";
+    loader.style.display = "block";
+    userStorageRef.put(selectedFile).then(function(snapshot) {
+
+        const fileDirectory = snapshot.ref.getDownloadURL().then(url => {
+            var _VIDEO_URL = url;
+            var _VIDEO_TITLE = document.getElementById('videotitle').value;
+            var _VIDEO_DESCRIPTION = document.getElementById('videodescription').value;
+
+
+            console.log(Title);
+            firebase.firestore().collection('videos').doc(_VIDEO_TITLE + String(toDay)).set({
+                "VideoTitle": _VIDEO_TITLE,
+                "VideoDescription": _VIDEO_DESCRIPTION,
+                "VideoUrl": _VIDEO_URL
+            });
+
+
+        }).catch(error => {
+            alert(error);
+            console.log(error);
+        });
+        filler.style.display = "none";
+        loader.style.display = "none";
+    }).catch(error => {
+        alert(String(error));
+        console.log(error);
+    });
+
+};
+        
 </script>
 
 

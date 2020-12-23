@@ -1,0 +1,99 @@
+*{
+    font-size: 16px;
+    font-family: "Open Sans";
+    padding: 0;
+    margin: 0;
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.content .row1{
+    background-color: #0F3B24;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+}
+.content .row1 button{
+    margin-left: 50%;
+    height: 30%;
+    vertical-align: center;
+    margin-top: 2.5rem;
+}
+.content .row1 h1{
+    color: #fff;
+    font-size: 1.2rem;
+   margin-top: 2.5rem;
+
+}
+.content .row2{
+    display: flex;
+    flex-direction: column;
+}
+.content .row2 h2{
+    padding-left: 10%;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+
+}
+
+.content .row2 .triple{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 10%;
+    padding-top: 2rem;
+    padding-right: 10%;
+
+}
+.content .row2 .triple .video{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-color: rgb(240, 240, 240);
+    border: 1px rgb(124, 124, 124) solid;
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    
+}
+.content .row2 .triple .video .thumbnail{
+    width: 100%;
+    height: 15rem;
+    background: url('../assets/images/videothumb.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.content .row2 .triple .video h3{
+    font-weight: 700;
+    color: rgb(26, 25, 25);
+    margin-top: .5rem;
+    padding-left: 1rem;
+}
+.content .row2 .triple .video p{
+    color: rgb(75, 75, 75);
+    margin-top: .5rem;
+    padding-left: 1rem;
+}
+.content .principle{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 1rem;
+}
+.content .principle video{
+    background-color: #000;
+    width: 77.5%;
+    height: 30rem;
+ 
+}
+.content .principle h1{
+    margin: .5rem;
+    font-size: 1.2rem;
+    color: #000;
+}
+.content .principle p{
+    margin: .5rem;
+    font-size: 1rem;
+    color: rgb(117, 117, 117);
+    margin-top: .3rem;
+}
+
