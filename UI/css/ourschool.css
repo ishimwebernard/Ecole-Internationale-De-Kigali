@@ -329,6 +329,7 @@
     color: rgb(80, 80, 80);
     opacity: 70%;
     font-size: 1rem;
+
 }
 .main .gallerynavigator .gallerynavigatorItem{
     padding-left: 5%;
@@ -364,6 +365,13 @@
 .row6 .photoGalery img:hover{
     opacity: 90%;
 }
+.CARD p{
+    margin-left: 10%;
+    margin-right: 20%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 .footer{
     background: #0F3B24;
     display: grid;

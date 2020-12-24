@@ -108,7 +108,7 @@
 .row12 .slide p{
     position: absolute;
     color: #fff;
-    bottom: 10rem;
+    bottom: 25rem;
     font-size: 4rem;
     text-align: center;
     width: 100%; 
@@ -181,8 +181,8 @@
     margin-top: 3rem;
 }
 .row3 .card-au-pair{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top:3rem;
 }
 .row3 .card-au-pair .card{
@@ -198,6 +198,7 @@
 
 .row3 .card-au-pair .card img{
     height: 4.3125rem;
+    width: 10.3125rem;
 }
 
 
