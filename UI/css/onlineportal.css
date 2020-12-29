@@ -26,6 +26,11 @@
     height: 10rem;
     
 }
+span{
+    color: #0F3B24;
+    font-weight: 700;
+    cursor: pointer;
+}
 .row1 .navgroup{
     /* padding: 1.1875rem 0 1.1875rem 0; */
     height: 100%;
@@ -130,25 +135,36 @@
 }
 .sessionContainer button{
     margin-top: 2.5%;
-    padding: 5px;
+    padding: .5rem 1rem .5rem 1rem;
     color: #fff;
-    background: #0F3B24;
-    border-radius: 10px;
+    background: linear-gradient(180deg, #FFD885,#FFB51B);
+    border-radius: 5px;
+    color: #474747;
+    font-weight: 700;
+    border: 1px rgb(80, 95, 80) solid;
 }
 .sessionContainer input{
     width: 60%;
     margin-top: 1%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px #0F3B24 solid;
+    font-size: 1.1rem;
 }
 #teacherSession{
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
+    height: 70%;
+    width: 70%;
     padding-top: 5%;
     padding-left: 5%;
+    background: linear-gradient(180deg, rgb(246, 253, 246),rgb(219, 253, 219));
+    margin-top: 3rem;
+    border-radius: 1rem;
+    
 }
 #headertitle{
     color: #0F3B24;
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 

@@ -126,12 +126,18 @@
 }
 
 .mobilemenu{
-    position: absolute;
+    position: fixed;
     z-index: 5;
     display: none;
     grid-template-columns: 3fr 1fr;
     width: 100%;
     height: 100%;
+    animation-name: MOBILE_MENU_DISPLAY;
+    animation-duration: 1s;
+}
+@keyframes MOBILE_MENU_DISPLAY{
+    from{opacity: 0}
+    to{opacity: 1}
 }
 .mobilemenu .mainNavItems{
     background: #fff;
@@ -390,6 +396,10 @@
     *{
         font-size: 16px;
     }
+    .row1 img{
+        height: 6rem;
+    }
+
 }
 @media only screen and (min-width: 601px) and (max-width: 1120px){
     *{
@@ -402,6 +412,9 @@
     }
     .row1 .navgroup .navItems{
         display: none;
+    }
+    .row1 img{
+        height: 6rem;
     }
     .row3 .card-au-pair{
         display: flex;
@@ -432,6 +445,9 @@
     }
     .row1 .navgroup .navItems{
         display: none;
+    }
+    .row1 img{
+        height: 4rem;
     }
     .row6 .photoGalery{
         display: flex;
@@ -472,6 +488,9 @@
     }
     .row1 .navgroup .navItems{
         display: none;
+    }
+    .row1 img{
+        width: 15%;
     }
     .row6 .photoGalery{
         display: flex;
