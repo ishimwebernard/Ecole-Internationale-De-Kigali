@@ -16,13 +16,13 @@
     padding-top: 0.4375rem;
     padding-right: 8.18042813455657%;
     padding-bottom: 0.4375rem;
-    background: #D8E1E4;
+    background: linear-gradient(180deg,  #D8E1E4, #B3CAD1);
     width: 100%;
 
 }
 .row1 img{
     width: 10%;
-    height: 10rem;
+    height: 120px;
     
 }
 .row1 .navgroup{
@@ -75,6 +75,7 @@
     font-size: 1rem;
     opacity: 90%;
     cursor: pointer;
+    text-shadow: .5px .5px #fff;
 }
 .row1 .navgroup .navItems .navItem:nth-child(3){
     color: #fdad00;
@@ -146,7 +147,7 @@
 }
 .presenter{
     width: 100%;
-    height: 40rem;
+    height: 570px;
     opacity: 80%;
     background: #000;
 }

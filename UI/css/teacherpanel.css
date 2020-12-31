@@ -107,14 +107,23 @@ label{
 input{
     border: none;
     padding: .5rem;
-    border-bottom: 1px #0F3B24 solid;
+    border: 1px #0F3B24 solid;
     background: transparent;
+    border-radius: 7.5px;
 }
+select{
+    margin-top: 1rem;
+    padding: .5rem;
+    border-radius: 7.5px;
+}
+
 textarea{
     border: none;
     padding: .5rem;
-    border-bottom: 1px #0F3B24 solid;
+    border: 1px #0F3B24 solid;
     background: transparent;
+    border-radius: 7.5px;
+
 }
 .titles{
     font-size: 1.5rem;
@@ -218,8 +227,8 @@ textarea{
     height: 50%;
     width: 80%;
     border-radius: 20px; 
-    background: linear-gradient(45deg, rgb(71, 71, 71),rgb(150, 150, 150));
     margin-left: 5%;
+    background: linear-gradient(180deg, #2c4638,#4F6E5E);
 }
 .elearning .leftnav p{
     font-weight: 600;
@@ -274,6 +283,7 @@ textarea{
 .elearning .um .umTitle{
     font-weight: 600;
     font-size: 1.2rem;
+    text-shadow: .75px .75px #fff;
 
 }
 .elearning .rightnav .nameIdentifier{
@@ -296,13 +306,17 @@ textarea{
     color: #921b61
 }
 .elearning .um{
-    background-color: #fff;
     padding: 1rem;
-    border: 1px #a3a3a3 solid;
     margin-top: 1rem;
     width: 70%;
     margin-left: 10%;
+    background: linear-gradient(45deg, rgb(240, 240, 240), rgb(233, 232, 232));
+    border-radius: 15px;
 }
+.elearning .um button{
+    margin-top: 1rem;
+}
+
 
 
 #filler{

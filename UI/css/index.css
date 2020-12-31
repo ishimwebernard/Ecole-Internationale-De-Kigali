@@ -16,13 +16,13 @@
     padding-top: 0.4375rem;
     padding-right: 8.18042813455657%;
     padding-bottom: 0.4375rem;
-    background: #D8E1E4;
+    background: linear-gradient(180deg,  #D8E1E4, #B3CAD1);
     width: 100%;
 
 }
 .row1 img{
     width: 10%;
-    height: 10rem;
+    height: 120px;
     
 }
 .row1 .navgroup{
@@ -75,6 +75,7 @@
     font-size: 1rem;
     opacity: 90%;
     cursor: pointer;
+    text-shadow: .5px .5px #fff;
 }
 .row1 .navgroup .navItems .navItem:first-child{
     color: #fdad00;
@@ -197,6 +198,7 @@
     flex-direction: row;
     margin-left: 5%;
     padding: 2rem;
+    cursor: pointer;
 }
 .row3 .card-au-pair .card .textContainer{
     margin-left: 10%;
@@ -206,6 +208,11 @@
     height: 4.3125rem;
     width: 10.3125rem;
 }
+.row3 .card-au-pair .card:hover{
+    opacity: 90%;
+    border: 2px #000 solid;
+}
+
 
 
 
@@ -237,9 +244,12 @@
     margin-left: 5.65749235474006%;
     margin-right: 5.6574923547400%;
     padding: 2rem .5rem 2rem .5rem;
-   
+}
+.row4 .session:hover{
+    background: linear-gradient(45deg, #2b2210, #5c4c2b);
 
 }
+
 .row4 .session span{
     font-weight: 700;
     font-size: 2rem;
@@ -261,6 +271,8 @@
     margin-top: 1.5rem;
     margin-left: 5.65749235474006%;
     margin-right: 5.6574923547400%;
+    background: linear-gradient(180deg, rgb(230, 230, 230),#fff);
+    cursor: pointer;
 
 }
 .row5 .eventcard .indicator p{
@@ -278,6 +290,16 @@
 
 
 }
+.row5 .eventcard .eventcontainer h3{
+    font-size: 1.3rem;
+    text-shadow: 2px 2px #fff;
+}
+.row5 .eventcard:hover{
+    background: linear-gradient(180deg, #fff,rgb(230, 230, 230));
+
+}
+
+
 .row6{
     background: linear-gradient(-45deg, #F3FAF9, #FEF8EB);
     margin-top: 3rem;
@@ -396,9 +418,9 @@
     *{
         font-size: 16px;
     }
-    .row1 img{
+    /* .row1 img{
         height: 6rem;
-    }
+    } */
 
 }
 @media only screen and (min-width: 601px) and (max-width: 1120px){
