@@ -47,44 +47,216 @@
        // Initialize Firebase
        firebase.initializeApp(firebaseConfig);
        firebase.analytics();
-       let _UPLOADED_MATERIALS = [];
+       var GeneralMaterials = [];
+
+    //    if(!String(getInputCodeValue()).startsWith('p1') && !String(getInputCodeValue()).startsWith('p2') && !String(getInputCodeValue()).startsWith('p3') && !String(getInputCodeValue()).startsWith('p4') && !String(getInputCodeValue()).startsWith('p5') && !String(getInputCodeValue()).startsWith('p6'))
+    //    {
+    //        alert('Invalid Class code');
+    //    }
+       queryStudentClasses(getInputCodeValue());
+      
+
+       function getInputCodeValue(){
+        var cookies = document.cookie
+                .split(';')
+                .map(cookie => cookie.split('='))
+                .reduce((accumulator, [key, value]) => ({
+                    ...accumulator,
+                    [key.trim()]: decodeURIComponent(value)
+                }), {});
+                console.log(cookies._inputCode);
+        return cookies._inputCode;        
+       }
+       
+
+       function queryStudentClasses(_studentClass){
+           var atleastOne = 'false';
+            (async()=>{
+                await firebase.firestore().collection('6CZ6G2PlHSdlYD9bkfcYedW0JhG3').onSnapshot((querySnapShot)=>{
+                    querySnapShot.forEach((doc)=>{
+                        GeneralMaterials.push(doc.data());
+                        // alert(GeneralMaterials);
+                    })
+                    console.log(GeneralMaterials);
+                    if(String(_studentClass).toLowerCase().startsWith('p4')){
+                    atleastOne = 'true';
+                    var studentClasses = [];
+                    for(let generalMaterial of GeneralMaterials){
+                        if(generalMaterial.targetClass == "primary4"){
+                            uploadedMaterials.innerHTML+=`
+                             <div class="um">
+                                 <p class="umTitle">Material Title: ${generalMaterial.name}</p>
+                                 <p class="umClass">Target Class: ${generalMaterial.targetClass}</p>
+                                 <p class="umDate">Date Uploaded: ${generalMaterial.toDay}</p>
+                                 <p class="umClass">Class Subject: ${generalMaterial.Subject}</p>
+                                 <p class="umClass">Material Description: ${generalMaterial.Description}</p>
+                                 <p class="umClass">Teacher Name: ${generalMaterial.teacher}</p>
+                                 <p class="umClass">Teacher Email: ${generalMaterial.email}</p>
+                             <button onclick="window.open('${generalMaterial.documentUrl}', '_blank')">View Material</button>
+                 </div>
+                             `;
+                            studentClasses.push(generalMaterial);
+                        }
+                    }
+                    console.log(`Atleast Onw ${atleastOne}`)
+                    return GeneralMaterials;
+            }else  if(String(_studentClass).toLowerCase().startsWith('p1')){
+                    atleastOne = 'true';
+                    var studentClasses = [];
+                    for(let generalMaterial of GeneralMaterials){
+                        if(generalMaterial.targetClass == "primary1"){
+                            uploadedMaterials.innerHTML+=`
+                             <div class="um">
+                                 <p class="umTitle">Material Title: ${generalMaterial.name}</p>
+                                 <p class="umClass">Target Class: ${generalMaterial.targetClass}</p>
+                                 <p class="umDate">Date Uploaded: ${generalMaterial.toDay}</p>
+                                 <p class="umClass">Class Subject: ${generalMaterial.Subject}</p>
+                                 <p class="umClass">Material Description: ${generalMaterial.Description}</p>
+                                 <p class="umClass">Teacher Name: ${generalMaterial.teacher}</p>
+                                 <p class="umClass">Teacher Email: ${generalMaterial.email}</p>
+                             <button onclick="window.open('${generalMaterial.documentUrl}', '_blank')">View Material</button>
+                 </div>
+                             `;
+                            studentClasses.push(generalMaterial);
+                        }
+                    }
+                    console.log(`Atleast Onw ${atleastOne}`)
+                    return GeneralMaterials;
+            }else  if(String(_studentClass).toLowerCase().startsWith('p2')){
+                    atleastOne = 'true';
+                    var studentClasses = [];
+                    for(let generalMaterial of GeneralMaterials){
+                        if(generalMaterial.targetClass == "primary2"){
+                            uploadedMaterials.innerHTML+=`
+                             <div class="um">
+                                 <p class="umTitle">Material Title: ${generalMaterial.name}</p>
+                                 <p class="umClass">Target Class: ${generalMaterial.targetClass}</p>
+                                 <p class="umDate">Date Uploaded: ${generalMaterial.toDay}</p>
+                                 <p class="umClass">Class Subject: ${generalMaterial.Subject}</p>
+                                 <p class="umClass">Material Description: ${generalMaterial.Description}</p>
+                                 <p class="umClass">Teacher Name: ${generalMaterial.teacher}</p>
+                                 <p class="umClass">Teacher Email: ${generalMaterial.email}</p>
+                             <button onclick="window.open('${generalMaterial.documentUrl}', '_blank')">View Material</button>
+                 </div>
+                             `;
+                            studentClasses.push(generalMaterial);
+                        }
+                    }
+                    console.log(`Atleast Onw ${atleastOne}`)
+                    return GeneralMaterials;
+            }else  if(String(_studentClass).toLowerCase().startsWith('p3')){
+                    atleastOne = 'true';
+                    var studentClasses = [];
+                    for(let generalMaterial of GeneralMaterials){
+                        if(generalMaterial.targetClass == "primary3"){
+                            uploadedMaterials.innerHTML+=`
+                             <div class="um">
+                                 <p class="umTitle">Material Title: ${generalMaterial.name}</p>
+                                 <p class="umClass">Target Class: ${generalMaterial.targetClass}</p>
+                                 <p class="umDate">Date Uploaded: ${generalMaterial.toDay}</p>
+                                 <p class="umClass">Class Subject: ${generalMaterial.Subject}</p>
+                                 <p class="umClass">Material Description: ${generalMaterial.Description}</p>
+                                 <p class="umClass">Teacher Name: ${generalMaterial.teacher}</p>
+                                 <p class="umClass">Teacher Email: ${generalMaterial.email}</p>
+                             <button onclick="window.open('${generalMaterial.documentUrl}', '_blank')">View Material</button>
+                 </div>
+                             `;
+                            studentClasses.push(generalMaterial);
+                        }
+                    }
+                    console.log(`Atleast Onw ${atleastOne}`)
+                    return GeneralMaterials;
+            }else  if(String(_studentClass).toLowerCase().startsWith('p5')){
+                    atleastOne = 'true';
+                    var studentClasses = [];
+                    for(let generalMaterial of GeneralMaterials){
+                        if(generalMaterial.targetClass == "primary5"){
+                            uploadedMaterials.innerHTML+=`
+                             <div class="um">
+                                 <p class="umTitle">Material Title: ${generalMaterial.name}</p>
+                                 <p class="umClass">Target Class: ${generalMaterial.targetClass}</p>
+                                 <p class="umDate">Date Uploaded: ${generalMaterial.toDay}</p>
+                                 <p class="umClass">Class Subject: ${generalMaterial.Subject}</p>
+                                 <p class="umClass">Material Description: ${generalMaterial.Description}</p>
+                                 <p class="umClass">Teacher Name: ${generalMaterial.teacher}</p>
+                                 <p class="umClass">Teacher Email: ${generalMaterial.email}</p>
+                             <button onclick="window.open('${generalMaterial.documentUrl}', '_blank')">View Material</button>
+                 </div>
+                             `;
+                            studentClasses.push(generalMaterial);
+                        }
+                    }
+                    console.log(`Atleast Onw ${atleastOne}`)
+                    return GeneralMaterials;
+            }else  if(String(_studentClass).toLowerCase().startsWith('p6')){
+                    atleastOne = 'true';
+                    var studentClasses = [];
+                    for(let generalMaterial of GeneralMaterials){
+                        if(generalMaterial.targetClass == "primary6"){
+                            uploadedMaterials.innerHTML+=`
+                             <div class="um">
+                                 <p class="umTitle">Material Title: ${generalMaterial.name}</p>
+                                 <p class="umClass">Target Class: ${generalMaterial.targetClass}</p>
+                                 <p class="umDate">Date Uploaded: ${generalMaterial.toDay}</p>
+                                 <p class="umClass">Class Subject: ${generalMaterial.Subject}</p>
+                                 <p class="umClass">Material Description: ${generalMaterial.Description}</p>
+                                 <p class="umClass">Teacher Name: ${generalMaterial.teacher}</p>
+                                 <p class="umClass">Teacher Email: ${generalMaterial.email}</p>
+                             <button onclick="window.open('${generalMaterial.documentUrl}', '_blank')">View Material</button>
+                 </div>
+                             `;
+                            studentClasses.push(generalMaterial);
+                        }
+                    }
+                    console.log(`Atleast Onw ${atleastOne}`)
+                    return GeneralMaterials;
+            }else{
+                alert('Invalid Class Code');
+            }
+                })
+            })();
+         
+  }
+
+
+    //    let _UPLOADED_MATERIALS = [];
  
      
      
-             getUploadedMaterials();
+    //          getUploadedMaterials();
             
-             async function getUploadedMaterials(){
-                 var uploadedMaterials = document.getElementById('uploadedMaterials');
-                await firebase.firestore().collection("6CZ6G2PlHSdlYD9bkfcYedW0JhG3")
-                 .onSnapshot((querySnapshot) => {
+    //          async function getUploadedMaterials(){
+    //              var uploadedMaterials = document.getElementById('uploadedMaterials');
+    //             await firebase.firestore().collection("6CZ6G2PlHSdlYD9bkfcYedW0JhG3")
+    //              .onSnapshot((querySnapshot) => {
                      
-                         querySnapshot.forEach((doc) => {
-                             // console.log(doc.id); // For doc name
-                             // console.log(doc.data());
-                             uploadedMaterials.innerHTML+=`
-                             <div class="um">
-                                 <p class="umTitle">Material Title: ${doc.data().name}</p>
-                                 <p class="umClass">Target Class: ${doc.data().targetClass}</p>
-                                 <p class="umDate">Date Uploaded: ${doc.data().toDay}</p>
-                                 <p class="umClass">Class Subject: ${doc.data().Subject}</p>
-                                 <p class="umClass">Material Description: ${doc.data().Description}</p>
-                             <button onclick="window.open('${doc.data().documentUrl}', '_blank')">View Material</button>
-                 </div>
-                             `;
-                             var objectToStore = {
-                                 "Subject": doc.data().Subject,
-                            "Description": doc.data().Description,
-                              "toDay": doc.data().toDay,
-                              "name": doc.data().name,
-                              "targetClass": doc.data().targetClass,
-                             "documentUrl": doc.data().documentUrl
+    //                      querySnapshot.forEach((doc) => {
+    //                          // console.log(doc.id); // For doc name
+    //                          // console.log(doc.data());
+    //                          uploadedMaterials.innerHTML+=`
+    //                          <div class="um">
+    //                              <p class="umTitle">Material Title: ${doc.data().name}</p>
+    //                              <p class="umClass">Target Class: ${doc.data().targetClass}</p>
+    //                              <p class="umDate">Date Uploaded: ${doc.data().toDay}</p>
+    //                              <p class="umClass">Class Subject: ${doc.data().Subject}</p>
+    //                              <p class="umClass">Material Description: ${doc.data().Description}</p>
+    //                          <button onclick="window.open('${doc.data().documentUrl}', '_blank')">View Material</button>
+    //              </div>
+    //                          `;
+    //                          var objectToStore = {
+    //                              "Subject": doc.data().Subject,
+    //                         "Description": doc.data().Description,
+    //                           "toDay": doc.data().toDay,
+    //                           "name": doc.data().name,
+    //                           "targetClass": doc.data().targetClass,
+    //                          "documentUrl": doc.data().documentUrl
      
-                             }
-                             _UPLOADED_MATERIALS.push(objectToStore);
-             });
-         });
-     }
-     console.log(_UPLOADED_MATERIALS);
+    //                          }
+    //                          _UPLOADED_MATERIALS.push(objectToStore);
+    //          });
+    //      });
+    //  }
+    //  console.log(_UPLOADED_MATERIALS);
   
            
      </script>

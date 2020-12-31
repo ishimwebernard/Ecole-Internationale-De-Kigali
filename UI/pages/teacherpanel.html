@@ -195,6 +195,28 @@ console.log(_TEACHER_ID);
 if(String(_TEACHER_ID) =='undefined'){
     location.href=`../index.html`;
 }
+var UsersInDb = [];
+var teacherEmail;
+var teacherName;
+//Get all users in the database
+(async()=>{await firebase.firestore().collection('Users').onSnapshot((querySnapshot)=>{
+    querySnapshot.forEach(document=>{
+       var User = {
+           name: document.data().name,
+           id: document.data().id,
+           email: document.data().email,
+       }
+       UsersInDb.push(User);
+       if(User.id == _TEACHER_ID){
+           teacherEmail = User.email;
+           teacherName = User.name;
+       }
+
+       
+    });
+});})();
+
+
   var choosefile = document.getElementById("p1").onchange = function(){
             var storageRef = firebase.storage().ref();
             var toDay = new Date();
@@ -222,13 +244,16 @@ var Title = document.getElementById('Title').value;
 var uploadClass = document.getElementById('uploadClass').value;
 
                     console.log(Title);
-                    firebase.firestore().collection(_TEACHER_ID).doc(String(Title)+"-"+uploadClass+"-"+String(new Date())).set({
+                    firebase.firestore().collection('6CZ6G2PlHSdlYD9bkfcYedW0JhG3').doc(String(Title)+"-"+uploadClass+"-"+String(new Date())).set({
                        "Subject": Subject,
                        "Description": Description,
                          "toDay": String(new Date()),
                          "name": Title,
                          "targetClass": uploadClass,
-                        "documentUrl": _MATERIALURL
+                        "documentUrl": _MATERIALURL,
+                        "email": teacherEmail,
+                        "teacher": teacherName
+                        
                      });
 
 
@@ -256,12 +281,18 @@ var uploadClass = document.getElementById('uploadClass').value;
 
             filler.style.display = "block";
             loader.style.display = "block";
-           await firebase.firestore().collection(_TEACHER_ID)
+           await firebase.firestore().collection('6CZ6G2PlHSdlYD9bkfcYedW0JhG3')
             .onSnapshot((querySnapshot) => {
                 
                     querySnapshot.forEach((doc) => {
                         // console.log(doc.id); // For doc name
                         // console.log(doc.data());
+                        console.log('Comparing ...');
+                        console.log(doc.data().email);
+                        console.log(teacherEmail);
+
+                        if(doc.data().email == teacherEmail){
+                            
                         uploadedMaterials.innerHTML+=`
                         <div class="um">
                             <p class="umTitle">Material Title: ${doc.data().name}</p>
@@ -269,9 +300,13 @@ var uploadClass = document.getElementById('uploadClass').value;
                             <p class="umDate">Date Uploaded: ${doc.data().toDay}</p>
                             <p class="umClass">Class Subject: ${doc.data().Subject}</p>
                             <p class="umClass">Material Description: ${doc.data().Description}</p>
+                            <p class="umClass">Teacher Email: ${doc.data().email}</p>
+                            <p class="umClass">Teacher Name: ${doc.data().teacher}</p>
                         <button onclick="window.open('${doc.data().documentUrl}', '_blank')">View Material</button>
             </div>
                         `;
+                        }
+
                         var objectToStore = {
                             "Subject": doc.data().Subject,
                        "Description": doc.data().Description,

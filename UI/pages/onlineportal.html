@@ -68,10 +68,10 @@
            <div class="user">
             <p id="headertitle">Login as a Student</p>
             
-            <input type="text" placeholder="Enter the class code" id=""><br>
+            <input type="text" placeholder="Enter the class code" id="inputClassCode"><br>
             <p>Are you an Instructor? <span onclick=" switchTab(0)">login as an Instructor</span></p>
 
-            <button onclick="location.href=`../pages/fullportal.html`">Log In</button>
+            <button onclick="allowForCheckin()">Log In</button>
            </div>
         </div>
        </div>
@@ -96,6 +96,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  const GeneralMaterials = [];
 
 
 
@@ -136,6 +137,13 @@
     }
     USERS[n].style.display = 'block';
     ANIMATOR_TL.fromTo(USERS[n], 1, {y: "-100%"}, {y: "0%"});
+  }
+
+  function allowForCheckin(){
+      var inputClassCode = document.getElementById('inputClassCode');
+      document.cookie = `_inputCode=${String(inputClassCode.value)}`;
+      console.log(inputClassCode.value);
+      location.href=`../pages/fullportal.html`;
   }
 </script>
 
