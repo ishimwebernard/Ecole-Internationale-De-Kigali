@@ -13,14 +13,14 @@
     <div class="content">
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
-                <p class="mobileNavItem">Home</p>
-                <p class="mobileNavItem">Our School</p>
-                <p class="mobileNavItem">Strategy</p>
-                <p class="mobileNavItem">Environment</p>
-                <p class="mobileNavItem">Health and safety</p>
-                <p class="mobileNavItem">Student Portal</p>
-                <p class="mobileNavItem">Contact</p>
-                <p class="mobileNavItem">Video Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../index.html`">Home</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Our School</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Strategy</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environment</p>
+                <p class="mobileNavItem" onclick="location.href=`#`">Health and safety</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Student Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Video Portal</p>
 
             </div>
             <div class="empty" onclick="revealHideMobileMenu()"> </div>
@@ -35,8 +35,8 @@
                     <p class="navItem" onclick="location.href=`./pages/environment.html`">Environment</p>
                     <p class="navItem">Health and Safety</p>
                     <p class="navItem" onclick="location.href=`./pages/onlineportal.html`">Student Portal</p>
-                    <p class="navItem">Contact</p>
-                    <p class="navItem">Video Portal</p>
+                    <p class="navItem" onclick="location.href=`./pages/contactus.html`">Contact</p>
+                    <p class="navItem" onclick="location.href=`./pages/videoportal.html`">Video Portal</p>
                 </div>
                 <div class="hamburger" onclick="revealHideMobileMenu()">
                     <div class="line"> </div>
@@ -102,7 +102,7 @@
             </div>
             <div class="card-au-pair">
                 <div class="card">
-                    <img src="./assets/images/studentavatar.png" alt="" class="cardimage">
+                    <img src="./assets/images/environment.png" alt="" class="cardimage">
                     <div class="textContainer">
                         <h3>Staff</h3>
                         <div class="cardline"></div>
@@ -187,21 +187,22 @@
             <div class="titles">
                 <h3 class="title">Gallery</h3>
             </div>
-
+<!-- 
             <div class="gallerynavigator">
                 <p class="gallerynavigatorItem">All</p>
                 <p class="gallerynavigatorItem">Classrooms</p>
                 <p class="gallerynavigatorItem">Library</p>
                 <p class="gallerynavigatorItem">Campus</p>
+            </div> -->
+            <div class="photoGalery" id="photoGalery">
+                <img src="./assets/images/slideshare1.png" class="galleryImage">
+                <img src="./assets/images/slideshare1.png" class="galleryImage">
             </div>
-            <div class="photoGalery">
-                <img src="./assets/images/slideshare1.png" alt="">
-                <img src="./assets/images/slideshare1.png" alt="">
+            <div class="galleryControlls">
+                <img onclick="displayNext()" style="transform: rotate(180deg);" src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"/>
+                <img onclick="displayPrevious()" src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"/>
             </div>
-            <div class="photoGalery">
-                <img src="./assets/images/studentavatar.png" alt="">
-                <img src="./assets/images/slideshare1.png" alt="">
-            </div>
+           
 
         </div>
         <div class="footer">
@@ -314,7 +315,7 @@ window.addEventListener("scroll", function() {
     var targetParagraph = target.childNodes[3];
     slides[slideIndex-1].style.display = "block";
     _SLIDEANIMATOR.fromTo(target,1,{opacity: .7}, {opacity: 1})
-    .fromTo(targetParagraph, 1, {y:"100%"},{y: "0%",ease: Power2.easeInOut},"-=1");
+    .fromTo(targetParagraph, 1, {y:"-100%"},{y: "0%",ease: Power2.easeInOut},"-=1");
     
     
     setTimeout(showSlides, 4000); // Change image every 2 seconds
@@ -352,7 +353,8 @@ window.addEventListener("scroll", function() {
   var itemsinGallery = [];
   const m=[];
   var n = 0;
-  var galery = document.getElementById('gallery');
+  var galery = document.getElementById('photoGalery');
+  var index = 0;
 
   var listRef = firebase.storage().ref().child('eikcorrected');
 // Find all the prefixes and items.
@@ -360,11 +362,11 @@ listRef.listAll().then(function(res) {
    res.items.forEach(function(itemRef) {
       itemRef.getDownloadURL().then(url=>{
         itemsinGallery.push(url);
-        galery.innerHTML+=`
-        <div class="photoGalery">
-                <img src="${url}" alt="">
-            </div>
-        `;
+         galery.innerHTML+=`
+     
+               <img class="galleryImage" src="${url}" alt="">
+         
+         `;
       });
       
   });
@@ -374,6 +376,33 @@ listRef.listAll().then(function(res) {
 console.log(itemsinGallery);
 for(let item in itemsinGallery){
     console.log("I finished");
+}
+function displayNext(){
+    var galleryImages = document.getElementsByClassName("galleryImage");
+    for(let galeryImage of galleryImages){
+        galeryImage.style.display = "none";
+    }
+    galleryImages[index].style.display = "block";
+    console.log(galleryImages.length);
+    console.log(index);
+    if(index >= galleryImages.length-1){
+        index = 0;
+    }else{
+    index = index +1;
+    }
+}
+function displayPrevious(){
+    var galleryImages = document.getElementsByClassName("galleryImage");
+    for(let galeryImage of galleryImages){
+        galeryImage.style.display = "none";
+    }
+    index = index-1;
+    if(index <=1){
+        index = 21;
+    }else{
+    galleryImages[index-2].style.display = "block";
+    index = index -1;
+    }
 }
 
 </script>

@@ -109,7 +109,7 @@
 .row12 .slide p{
     position: absolute;
     color: #fff;
-    bottom: 25rem;
+    bottom: 500px;
     font-size: 4rem;
     text-align: center;
     width: 100%; 
@@ -343,21 +343,35 @@
     color: #fff;
 }
 .row6 .photoGalery{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+     display: flex;
+    flex-direction: row;
     margin-top: 3rem;
     margin-right: 5.65749235474006%;
 
 
 }
 .row6 .photoGalery img{
-    width: 50%;
-    height:20.5rem;
+    width: 90%;
+    height:35.5rem;
     align-self: center;
     margin-left: 20%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-right: 3rem;
+    animation-name: IMGANIME;
+    animation-duration: 1s;
+}
+@keyframes IMGANIME{
+    from{margin-right: 10rem;}
+    to{margin-right: 3rem;}
 }
 .row6 .photoGalery img:hover{
     opacity: 90%;
+}
+.row6 .galleryControlls{
+    margin-left: 40%;
+    margin-right: auto;
 }
 .footer{
     background: #0F3B24;
