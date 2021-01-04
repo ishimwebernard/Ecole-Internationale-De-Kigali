@@ -59,6 +59,13 @@ button{
 .dutiesContainer .mm{
     height: 82.5%;
 }
+.buttonLanguage{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 12fr 1fr;
+    top: 0;
+    
+}
 
 
 

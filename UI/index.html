@@ -10,7 +10,14 @@
 </head>
 <body>
     
-    <div class="content">
+    <div class="content" id="mainContent">
+        <div class="buttonLanguage">
+            <div class="e"></div>
+           <div class="set">
+            <button onclick="French()">Fr</button>
+            <button>En</button>
+           </div>
+        </div>
         <div class="fillerMain" id="fillerMain"> </div>
         <div class="dutiesContainer" id="dutiesContainer">
             <h1 class="title" id="title">jabvjhbajhkbv</h1>
@@ -59,19 +66,19 @@
             <div class="slide fade" id="fade1">
                 <div class="filler">
                 </div>
-                <p>Where everyone is <span>welcome</span></p>
+                <p class="pSlide">Where everyone is <span> welcome</span></p>
 
             </div>
             <div class="slide fade" id="fade2">
                 <div class="filler">
                 </div>
-                <p>A place for <span>everyone</span></p>
+                <p class="pSlide">A place for <span> everyone</span></p>
 
             </div>
             <div class="slide fade"id="fade3">
                 <div class="filler">
                 </div>
-                <p>A pitch for <span>performance</span></p>
+                <p class="pSlide">A pitch for <span> performance</span></p>
 
             </div>
         </div>
@@ -84,7 +91,7 @@
 
             
         </div>
-        <div class="row3">
+        <div class="row3" id="row3">
             <div class="titles">
                 <h3 class="title">We are task oriented</h3>
             </div>
@@ -140,8 +147,7 @@
                     <h2>Primary <span>School</span></h2>
                 </div>
                 <p class="sessioncontent">
-                    orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,                </p>
-            </div>
+                    Primary education provides learning and educational activities typically designed to provide students with fundamental skills in reading, writing and mathematics (i.e. literacy and numeracy), and to establish a sound foundation for learning and solid understanding of core areas of knowledge            </div>
             <div class="session">
                 <div class="floater">
                     <h2>Nursery <span>School</span></h2>
@@ -439,6 +445,192 @@ function dismiss(){
     var dutiesContainer = document.getElementById('dutiesContainer');
     fillerMain.style.display = "none";
     dutiesContainer.style.display = "none";
+}
+function French(){
+    document.getElementById('mobilemenu').innerHTML = `
+    <div class="mainNavItems">
+                <p class="mobileNavItem" onclick="location.href=''../index.html'">Accueil</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/ourschool.html'">Notre école</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/strategy.html'">Stratégie</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/environment.html'">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href='#'">Santé et sécurité</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/onlineportal'">Portail étudiant</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/contactus.html'">Contact</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/videoportal.html'">Portail vidéo</p>
+
+            </div>
+            <div class="empty" onclick="revealHideMobileMenu()"> </div>
+    `;
+    document.getElementById('navgroup').innerHTML= `
+    <div class="navItems">
+                <p class="navItem" onclick="location.href=''../index.html'">Accueil</p>
+                <p class="navItem" onclick="location.href='../pages/ourschool.html'">Notre école</p>
+                <p class="navItem" onclick="location.href='../pages/strategy.html'">Stratégie</p>
+                <p class="navItem" onclick="location.href='../pages/environment.html'">Environnement</p>
+                <p class="navItem" onclick="location.href='#'">Santé et sécurité</p>
+                <p class="navItem" onclick="location.href='../pages/onlineportal'">Portail étudiant</p>
+                <p class="navItem" onclick="location.href='../pages/contactus.html'">Contact</p>
+                <p class="navItem" onclick="location.href='../pages/videoportal.html'">Portail vidéo</p>
+
+            </div>
+            <div class="hamburger" onclick="revealHideMobileMenu()">
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                </div>
+    `;
+    var pSlide = document.getElementsByClassName('pSlide');
+    pSlide[0].innerHTML = `Où tout le monde est<span> Bienvenue</span>`;
+    pSlide[1].innerHTML = `Un endroit pour<span> tout le monde</span>`;
+    pSlide[2].innerHTML = `Un pitch pour<span> performance</span>`;
+    document.getElementById('row2').innerHTML = `            <div class="titles" id="titles">
+                <h3 class="title">Ecole International de KIGALI</h3>
+            </div>
+            <p class="welcomesession" id="welcomesession">
+L'idée d'ouvrir une école a été créée en 1997 pour répondre aux besoins des parents qui souhaitaient que leurs enfants suivent des cours en français, alors que les institutions pouvant répondre étaient restreintes ou surchargées. De plus, les parents de Kigali n’ont pas le temps d’étudier et de suivre les devoirs de leurs enfants à la maison en raison de leur profession. <br> <br> <br> Ecole Internationale de Kigali </p>
+`;
+document.getElementById('row3').innerHTML=`<div class="titles">
+                <h3 class="title">Nous sommes orientés tâches</h3>
+            </div>
+            <div class="card-au-pair">
+                <div class="card" onclick="showPopup('Les Eleves', './helperFiles/staffRoleFrench.txt')">
+                    <img src="./assets/images/studentavatar.png" alt="" class="cardimage">
+                    <div class="textContainer">
+                        <h3>Élèves</h3>
+                        <div class="cardline"></div>
+                        <p>
+                            L'élève doit comprendre son rôle dans sa propre réussite.
+                            Les étudiants sont l'épine dorsale d'une bonne réussite scolaire                   </p>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup('L'enseignant', './helperFiles/staffRoleFrench.txt')">
+                    <img src="./assets/images/teacher.png" alt="" class="cardimage">
+                    <div class="textContainer">
+                        <h3>L'enseignant</h3>
+                        <div class="cardline"></div>
+                        <p>
+Un enseignant doit davanta
+ge être un formateur d'enseignants. Tenez les documents requis. Il doit continuellement s'autoformer. "Il ne donne que ce qui est". </p>                    </div>
+                </div>
+            </div>
+            <div class="card-au-pair">
+                <div class="card" onclick="showPopup('Personnelle', './helperFiles/staffRoleFrench.txt')">
+                    <img src="./assets/images/environment.png" alt="" class="cardimage">
+                    <div class="textContainer">
+                        <h3>Personnelle</h3>
+                        <div class="cardline"></div>
+                        <p>
+L'élève doit comprendre son rôle dans sa propre réussite. Les étudiants sont l'épine dorsale                        </p>
+                    </div>
+                </div>
+                <div class="card" onclick="showPopup('Students', './helperFiles/parentsRoleFrench.txt')">
+                    <img src="./assets/images/parents.png" alt="" class="cardimage">
+                    <div class="textContainer">
+                        <h3>Parents</h3>
+                        <div class="cardline"></div>
+                        <p>
+Les parents doivent vérifier régulièrement le travail de leur enfant. Fournir du matériel de base comme des livres, des cahiers, etc. Promouvoir la discipline et les valeurs culturelles. </p>                    </div>
+                </div>
+            </div>`;
+            document.getElementsByClassName('row4')[0].innerHTML = `
+            <div class="titles">
+                <h3 class="title">Nos séances</h3>
+            </div>
+            <div class="session">
+                <div class="floater">
+                    <h2><span>Ecole</span> Primaire</h2>
+                </div>
+                <p class="sessioncontent">
+                    L'enseignement primaire propose des activités d'apprentissage et éducatives généralement conçues pour fournir aux élèves des compétences fondamentales en lecture, en écriture et en mathématiques (c'est-à-dire en littératie et en calcul), et pour établir une base solide pour l'apprentissage et une solide compréhension des domaines de connaissances de base</p></session>      
+            </div>
+            <div class="session">
+                <div class="floater">
+                    <h2><span>Ecole</span> maternelle</h2>
+                </div>
+                <p class="sessioncontent">
+                    C'est un fait établi depuis longtemps qu'un lecteur sera distrait par le contenu lisible d'une page lorsqu'il regarde sa mise en page. L'intérêt d'utiliser Lorem Ipsum est qu'il a une distribution plus ou moins normale des lettres, par opposition à l'utilisation de «Contenu ici, contenu ici», ce qui le fait ressembler à un anglais lisible. De nombreux packages de publication assistée par ordinateur et éditeurs de pages Web </p> 
+            </div>
+            `;
+            document.getElementsByClassName('row5')[0].innerHTML=`
+            <div class="titles">
+                <h3 class="title">Dernières nouvelles et événements</h3>
+            </div>
+            <div class="eventcard">
+                <div class="indicator">
+                    <p>Nouvelles</p>
+                </div>
+                <div class="eventcontainer">
+                    <img src="" alt="">
+                    <div class="eventText">
+                        <h3>Frais de scolarité modifiés</h3>
+                        <p>Cliquez pour télécharger la structure des frais</p>
+                    </div>
+                </div>
+            </div>
+            <div class="eventcard">
+                <div class="indicator">
+                    <p>Nouvelles</p>
+                </div>
+                <div class="eventcontainer">
+                    <img src="" alt="">
+                    <div class="eventText">
+                        <h3>Frais de scolarité modifiés</h3>
+                        <p>Cliquez pour télécharger la structure des frais</p>
+                    </div>
+                </div>
+            </div>
+            <div class="eventcard">
+                <div class="indicator">
+                    <p>Nouvelles</p>
+                </div>
+                <div class="eventcontainer">
+                    <img src="" alt="">
+                    <div class="eventText">
+                        <h3>Frais de scolarité modifiés</h3>
+                        <p>Cliquez pour télécharger la structure des frais</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            document.getElementsByClassName('footer')[0].innerHTML = `
+            <div class="footergroup">
+                <h2>Adresse</h2>
+                <div class="item">
+                    <img src="./assets/images/location_vector.png" alt="">
+                    <p>KN XXX ST</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/call_vector.png" alt="">
+                    <p>+250 788 305 488</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/message_vector.png" alt="">
+                    <p>symka2001@yahoo.fr</p>
+                </div>
+            </div>
+            <div class="footergroup">
+                <h2>Suivez nous</h2>
+                <div class="item">
+                    <img src="./assets/images/facebook.png" alt="">
+                    <p>Facebook</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/twitter.png" alt="">
+                    <p>Twitter</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/linkedin_vector.png" alt="">
+                    <p>Linked In</p>
+                </div>
+            </div>
+
+            <div class="footergroup">
+                <h2>Souscrire</h2>
+             <input type="text" placeholder="Enter your email">
+             <button>Souscrire</button>
+            </div>`;
+            
 }
 
 </script>
