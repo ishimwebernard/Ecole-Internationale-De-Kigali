@@ -19,6 +19,24 @@
     width: 100%;
 
 }
+button{
+    padding: .5rem 1rem .5rem 1rem;
+    color: #fff;
+    background: linear-gradient(180deg, #FFD885,#FFB51B);
+    border-radius: 5px;
+    color: #474747;
+    font-weight: 700;
+    border: 1px rgb(80, 95, 80) solid;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.buttonLanguage{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 12fr 1fr;
+    top: 0;
+    
+}
 .row1 img{
     width: 10%;
     height: 120px;

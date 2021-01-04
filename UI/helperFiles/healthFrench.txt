@@ -1,0 +1,172 @@
+
+    <div class="content">
+        <div class="buttonLanguage">
+            <div class="e"></div>
+           <div class="set">
+            <button onclick="French()">Fr</button>
+            <button onclick="location.href='./health.html'">En</button>
+           </div>
+        </div>
+        <div class="mobilemenu" id="mobilemenu">
+            <div class="mainNavItems">
+                <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href=`#`">Health and safety</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
+
+            </div>
+            <div class="empty" onclick="revealHideMobileMenu()"> </div>
+        </div>
+        <div class="row1">
+            <img src="../assets/images/schoollogo.png" id="schoollogo" alt="" class="logo">
+            <div class="navgroup" id="navgroup">
+                <div class="navItems">
+                    <p class="navItem" onclick="location.href=`../index.html`">Accueil</p>
+                <p class="navItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
+                <p class="navItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
+                <p class="navItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
+                <p class="navItem" onclick="location.href=`#`">Health and safety</p>
+                <p class="navItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
+                <p class="navItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
+                <p class="navItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
+                </div>
+                <div class="hamburger" onclick="revealHideMobileMenu()">
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                    <div class="line"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="gallerynavigator">
+                <p class="gallerynavigatorItem" onclick="switchTab(0)">Santé et sécurité</p>
+                <!-- <p class="gallerynavigatorItem" onclick="switchTab(1)">Overall Objective</p>
+                <p class="gallerynavigatorItem" onclick="switchTab(2)">Specific Objectives</p> -->
+                <p class="gallerynavigatorItem" onclick="switchTab(1)">Installations académiques</p>
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="imageSet">
+                    <img class="presenter" src="../assets/images/Image6.jpg">
+                    <img class="presenter" src="../assets/images/Image4.jpg">
+                    <img class="presenter" src="../assets/images/Image13.jpg">
+                </div>
+                <h2>Mesures de prévention scolaire pour le COVID-19</h2>
+                <p>
+                Il y a plusieurs actions et exigences qui devraient être revues et mises en place pour empêcher l'introduction et la propagation du COVID-19 dans les écoles et dans la communauté; et pour assurer la sécurité des enfants et du personnel scolaire lorsqu'ils sont à l'école. Des dispositions spéciales devraient être envisagées pour le développement de la petite enfance, les établissements d'enseignement supérieur, les pensionnats ou les établissements spécialisés.
+
+                    <br> <br> <b> Mesures au niveau communautaire </b>: effectuer une détection précoce, des tests, la recherche des contacts et la mise en quarantaine des contacts; enquêter sur les grappes; assurer la distance physique, les pratiques d'hygiène et d'hygiène des mains et l'utilisation d'un masque adapté à l'âge; protéger les groupes vulnérables. Les initiatives communautaires telles que la lutte contre les rumeurs trompeuses jouent également un rôle important dans la réduction du risque d'infection.
+                    <br> <br> <b> Politique, pratique et infrastructure </b>: Veiller à ce que les ressources, politiques et infrastructures nécessaires soient en place pour protéger la santé et la sécurité de tout le personnel de l'école, y compris les personnes à plus haut risque.
+
+Aspects comportementaux: Tenez compte de l'âge et de la capacité des élèves à comprendre et à respecter les mesures mises en place. Les jeunes enfants peuvent avoir plus de difficulté à respecter la distance physique ou à utiliser correctement les masques.
+
+<br> <br> <b> Sûreté et sécurité: </b> La fermeture ou la réouverture d'une école peut affecter la sûreté et la sécurité des élèves et les enfants les plus vulnérables peuvent nécessiter une attention particulière, par exemple pendant le ramassage et le dépôt. de.
+
+<br> <br> <b> Hygiène et pratiques quotidiennes au niveau de l'école et de la salle de classe: </b> Distance physique d'au moins 1 mètre entre les individus, y compris espacement des bureaux, hygiène des mains et respiratoire fréquente, utilisation d'un masque adapté à l'âge, des mesures de ventilation et de nettoyage de l'environnement doivent être en place pour limiter l'exposition. Les écoles devraient éduquer le personnel et les élèves sur les mesures de prévention du COVID-19, élaborer un calendrier pour le nettoyage et la désinfection quotidiens de l'environnement scolaire, des installations et des surfaces fréquemment touchées, et garantir la disponibilité d'installations d'hygiène des mains et des conseils nationaux / locaux sur l'utilisation des masques.
+
+<br> <br> <b> Dépistage et prise en charge des élèves malades, des enseignants et des autres membres du personnel scolaire: </b> Les écoles doivent appliquer la politique de «rester à la maison en cas de malaise», renoncer à l'obligation d'obtenir une note du médecin, créer une liste de contrôle pour que les parents / élèves / personnel décident d'aller à l'école (en tenant compte de la situation locale), assurez-vous que les élèves qui ont été en contact avec un cas de COVID-19 restent à la maison pendant 14 jours et envisagez des options de dépistage à l'arrivée.
+
+<br> <br> <b> Protection des personnes à haut risque: </b> Les écoles devraient identifier les élèves et les enseignants à haut risque avec des conditions médicales préexistantes afin de proposer des stratégies pour assurer leur sécurité; maintenir la distance physique et la protection des masques médicaux ainsi qu'une hygiène des mains fréquente et une étiquette respiratoire.
+<br> <br> <b> Communication avec les parents et les élèves: </b> Les écoles doivent tenir les élèves et les parents informés des mesures mises en œuvre pour assurer leur collaboration et leur soutien.
+
+<br> <br> <b> Mesures supplémentaires liées à l'école, telles que les contrôles de vaccination et les programmes de vaccination de rattrapage: </b> Assurer la continuité ou l'expansion des services essentiels, y compris l'alimentation scolaire, la santé mentale et le soutien psychosocial.
+
+<br> <br> <b> Distances physiques à l'extérieur des salles de classe: </b> Maintenez une distance d'au moins 1 mètre pour les élèves (tous les groupes d'âge) et le personnel, si possible.
+
+<br> <br> <b> Distances physiques à l'intérieur des salles de classe: </b>
+
+Dans les zones de transmission communautaire du COVID-19, maintenez une distance d'au moins 1 mètre entre tous les individus de tous les groupes d'âge, pour toutes les écoles restant ouvertes. Cela comprend l'augmentation de l'espacement des bureaux et l'organisation des pauses, des pauses et des pauses déjeuner; limiter le mélange des classes et des groupes d'âge; envisager des classes plus petites ou alterner les horaires de présence et assurer une bonne ventilation dans les salles de classe.
+
+                </p>
+    
+            </div>
+            <div class="CARD" id="ourSchool">
+                <div class="imageSet">
+                    <img class="presenter" src="../assets/images/Image6.jpg">
+                    <img class="presenter" src="../assets/images/Image13.jpg">
+                    <img class="presenter" src="../assets/images/Image3.jpg">
+                </div>
+                <h2>Installations d'infrastructure</h2>
+                <p>
+                    On ne peut nier l’importance d’une école dans la formation de la personnalité et du processus d’apprentissage holistique d’un élève. Tout comme un enseignant expérimenté et la pédagogie de l’enseignement jouent un rôle essentiel dans le façonnement de la vie universitaire des élèves, l’infrastructure est également vitale. Il crée un environnement favorable au développement holistique des élèves. Tout le monde sait que chaque parent veut dépenser de l’argent là où ses enfants se sentent en sécurité tout en apprenant et en profitant de leur vie étudiante. Ils souhaitent s'assurer que les écoles disposent de normes de sécurité et d'installations suffisantes pour faire de l'apprentissage un plaisir. <br> <br>
+                    Il existe des études suggérant que les élèves des écoles aux infrastructures médiocres peuvent avoir des scores inférieurs à ceux qui ont accès à de meilleures infrastructures. Cela fait de l’infrastructure scolaire un élément clé de la croissance scolaire et globale de l’enfant. <br> <br>
+                    En outre, une salle de classe surpeuplée et un environnement stressant affectent également les capacités d’apprentissage des élèves. C’est pourquoi le ratio école-enseignant est également un paramètre clé pour les parents avant d’admettre leurs pupilles dans une école en particulier.
+                    <br> <br>
+                    <b> Qu'est-ce que l'infrastructure scolaire? </b> <br> <br>
+                    
+                    Certains des éléments clés qui devraient figurer dans une liste de contrôle idéale lors de l'évaluation de toute infrastructure scolaire sont les suivants:
+                  
+                    Salles de classe spacieuses et bien ventilées <br> <br>
+                   <i> Bibliothèques <br> </i>
+                    <i> Terrains de jeux </i> <br>
+                    <i> Des laboratoires bien équipés </i> <br>
+                    <i> Les installations étudient les tables, les chaises, les meubles et les services de base tels que l'eau, l'électricité, etc. </i> <br>
+                    <i> Salles d'étude </i> <br>
+                    <i> Équipement de jeux </i> <br>
+                    <i> Zone de montage </i> <br>
+                    <i> Installations sanitaires bien entretenues </i> <br>
+                   <br>
+                    <b> Infrastructure Essentials for Schools </b> <br> <br>
+Outre les équipements de base, voici quelques éléments importants que les écoles de l'Inde essaient de fournir: <br> <br>
+<b> Bibliothèques </b> <br>
+Une bibliothèque bien équipée abritant une multitude de livres utiles ou d'installations vidéo informatives et intéressantes, associée à une ambiance motivante ou stimulante, attire non seulement les étudiants, mais développe également le goût d'étudier. Il encourage à explorer des choses intéressantes parmi les étudiants, en particulier dans leurs années de formation, lorsque la curiosité de savoir est intense parmi les esprits curieux des enfants. Ces lieux servent également à organiser des sessions interactives et à échanger des connaissances entre les élèves, améliorant ainsi les compétences en écriture et en lecture des élèves. <br> <br>
+                <b> Installations sportives </b> <br> <br>
+Une école qui n’a pas la possibilité de jouer et de développer des compétences sportives peut faire ou entacher la réputation d’une école à l’époque moderne. Car, chaque enfant considère aujourd'hui telle ou telle personnalité sportive comme son idéal. Que ce soit les arts martiaux, la natation, le cricket ou le patinage, les élèves souhaitent apprendre quelque chose à l'école même pour être meilleurs que leurs amis du quartier. Ainsi, la disponibilité des installations sportives, des terrains de basket-ball, des courts de tennis, du terrain de cricket, de la patinoire, des terrains de volley-ball et d'une salle de sport couverte sont actuellement considérées comme des éléments essentiels de l'infrastructure de toute école moderne.
+<br> <br>
+<b> Laboratoires TIC / Centre multimédia </b> <br>
+    Les laboratoires TIC / laboratoires multimédias à la pointe de la technologie peuvent jouer un rôle habilitant en exploitant l'utilisation de la technologie pour améliorer les résultats d'apprentissage des étudiants. Celles-ci servent également à créer des opportunités pour les derniers styles d'apprentissage et des moyens de créer et de collaborer sur des paradigmes de pointe soutenus par l'informatique.
+    <br> <br> <b> Salle de projection interactive </b> <br>
+    Le projecteur interactif, qui est une solution portable, permet de convertir n'importe quelle surface (écrans de projection existants, tableaux blancs ou surface murale) en une surface interactive. Parallèlement, un stylo interactif qui peut être utilisé pour dessiner, pointer ou cliquer simplement en touchant directement l'écran devient maintenant populaire dans de nombreuses écoles à travers le pays.
+    <br> <br> <b> Portail d'apprentissage en ligne </b> <br>
+    Le but de ce portail d'apprentissage en ligne est de permettre aux enseignants de distribuer du matériel didactique aux élèves, même dans les zones reculées. Cela aide beaucoup en particulier pour les périodes où les étudiants ne sont pas invités à venir à l'école <br> Chaque classe a un code de classe et il est utilisé par les étudiants pour entrer dans le système. <br> Les enseignants ont également accès à cette plate-forme où ils se connectent avec leur e-mail et leur mot de passe et utiliser le système pour télécharger le matériel d'apprentissage n = pour que les étudiants puissent y accéder
+                </p>
+    
+            </div>
+            
+     
+    </div>
+   
+
+        <div class="footer">
+            <div class="footergroup">
+                <h2>Address</h2>
+                <div class="item">
+                    <img src="./assets/images/location_vector.png" alt="">
+                    <p>KN XXX ST</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/call_vector.png" alt="">
+                    <p>+250 788 305 488</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/message_vector.png" alt="">
+                    <p>symka2001@yahoo.fr</p>
+                </div>
+            </div>
+            <div class="footergroup">
+                <h2>Follow us</h2>
+                <div class="item">
+                    <img src="./assets/images/facebook.png" alt="">
+                    <p>Facebook</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/twitter.png" alt="">
+                    <p>Twitter</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/linkedin_vector.png" alt="">
+                    <p>Linked In</p>
+                </div>
+            </div>
+
+            <div class="footergroup">
+                <h2>Subscribe</h2>
+             <input type="text" placeholder="Enter your email">
+             <button>Subscribe</button>
+            </div>
+
+        </div>
