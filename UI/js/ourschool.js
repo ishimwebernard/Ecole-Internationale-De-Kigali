@@ -15,3 +15,17 @@ function switchTab(n){
     _CARD[n].style.display = "block";
  
   }
+  function FRENCH(){
+    var _CARD = document.getElementsByClassName('CARD');
+    _CARD[1].style.display = 'none';
+    _CARD[2].style.display = 'none';
+    var client = new XMLHttpRequest();
+    client.open('GET','../helperFiles/ourSchoolFrench.txt');
+    client.onreadystatechange = function(){
+      document.getElementsByClassName('content')[0].innerHTML = String(client.responseText);
+
+    }
+    client.send();
+    switchTab(0);
+
+  }
