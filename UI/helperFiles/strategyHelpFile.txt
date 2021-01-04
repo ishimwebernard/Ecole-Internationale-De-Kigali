@@ -1,33 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="../css//strategy.css">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
-    <title>Ecole International De Kigali</title>
-</head>
-<body>
-    
     <div class="content">
-        <div class="buttonLanguage">
-            <div class="e"></div>
-           <div class="set">
-            <button onclick="FRENCH()">Fr</button>
-            <button onclick="location.href='./index.html'">En</button>
-           </div>
-        </div>
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
-                <p class="mobileNavItem" onclick="location.href=`../index.html`">Home</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Our School</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Strategy</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environment</p>
+                 <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
                 <p class="mobileNavItem" onclick="location.href=`#`">Health and safety</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Student Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Video Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
 
             </div>
             <div class="empty" onclick="revealHideMobileMenu()"> </div>
@@ -36,14 +17,14 @@
             <img src="../assets//images/schoollogo.png" id="schoollogo" alt="" class="logo">
             <div class="navgroup" id="navgroup">
                 <div class="navItems">
-                    <p class="navItem" onclick="location.href=`../index.html`">Home</p>
-                <p class="navItem" onclick="location.href=`../pages/ourschool.html`">Our School</p>
-                <p class="navItem" onclick="location.href=`../pages/strategy.html`">Strategy</p>
-                <p class="navItem" onclick="location.href=`../pages/environment.html`">Environment</p>
+                       <p class="navItem" onclick="location.href=`../index.html`">Accueil</p>
+                <p class="navItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
+                <p class="navItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
+                <p class="navItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
                 <p class="navItem" onclick="location.href=`#`">Health and safety</p>
-                <p class="navItem" onclick="location.href=`../pages/onlineportal`">Student Portal</p>
+                <p class="navItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
                 <p class="navItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
-                <p class="navItem" onclick="location.href=`../pages/videoportal.html`">Video Portal</p>
+                <p class="navItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
                 </div>
                 <div class="hamburger" onclick="revealHideMobileMenu()">
                     <div class="line"> </div>
@@ -57,36 +38,36 @@
         <div class="header">
             <img src="../assets/images/Image62.jpg" alt="" class="presenter">
             <div class="cover" id="cover"> </div>
-       <p class="pr" id="pr">Enable students to achieve optimal <span>maternal</span> and <span>primary</span> schooling level</p>
+       <p class="pr" id="pr">Permettre aux élèves d’atteindre un niveau de scolarité optimal <span> maternel </span> et <span> primaire </span></p>
         </div>
         <p class="tit">School Strategy</p>
         <div class="messagecouple">
             <div class="message">
                 <img src="../assets/images/Image27.jpg" alt="">
                 <div class="text">
-                    <h1>Duties of Students</h1>
+                    <h1>Tâches des étudiants</h1>
                 <p id="dutiesStudent">Students should understand the role they must play in their own success. Students are the backbone of a good academic success because all other factors are complete.
-                    Parents can pay school fees (tuition fees) and teachers provide lessons (or instill knowledge) but without the will of the student with a good academic achievement can not be held
-                    Do all homework assigned is one of the best effective ways and the best way to get good results at school.
-                    Even if the duties are not listed for the promotion of class, however it is a profitable exercise for the advancement of knowledge. This will allow students to work well in tests and examinations.
-                    This practice instills in students the notion that the rules at school. Regularly attend lessons: Students have always in mind that they should participate in the lessons permanently. They should have thirst to follow and participate regularly in lessons, even if they are a little sick, they will endeavor to come to school.
-                    What students are asked to :
-                    The study:
-                    Students should be used for personal study. Remind them that they came to study. They must be responsible.</p>
+                    Les parents peuvent payer les frais de scolarité (frais de scolarité) et les enseignants dispensent des cours (ou inculquent des connaissances) mais sans la volonté de l'élève avec une bonne réussite scolaire ne peut être tenu
+                    Faire tous les devoirs assignés est l'un des meilleurs moyens efficaces et le meilleur moyen d'obtenir de bons résultats à l'école.
+                    Même si les fonctions ne sont pas énumérées pour la promotion de classe, il s'agit cependant d'un exercice profitable pour l'avancement des connaissances. Cela permettra aux étudiants de bien travailler dans les tests et les examens.
+                    Cette pratique inculque aux élèves l'idée que les règles à l'école. Assister régulièrement aux cours: les étudiants ont toujours à l'esprit qu'ils doivent participer aux cours en permanence. Ils doivent avoir soif de suivre et participer régulièrement aux cours, même s'ils sont un peu malades, ils s'efforceront de venir à l'école.
+                    Ce que les élèves sont invités à:
+                    L'étude:
+                    Les étudiants doivent être utilisés pour des études personnelles. Rappelez-leur qu'ils sont venus étudier. Ils doivent être responsables.</p>
                 </div>
             </div>
             <div class="message">
                 <img src="../assets/images/Image27.jpg" alt="">
                 <div class="text">
-                    <h1>Duties of Parents</h1>
+                    <h1>Obligations des parents</h1>
                 <p id="dutiesParents">Students should understand the role they must play in their own success. Students are the backbone of a good academic success because all other factors are complete.
-                    Parents can pay school fees (tuition fees) and teachers provide lessons (or instill knowledge) but without the will of the student with a good academic achievement can not be held
-                    Do all homework assigned is one of the best effective ways and the best way to get good results at school.
-                    Even if the duties are not listed for the promotion of class, however it is a profitable exercise for the advancement of knowledge. This will allow students to work well in tests and examinations.
-                    This practice instills in students the notion that the rules at school. Regularly attend lessons: Students have always in mind that they should participate in the lessons permanently. They should have thirst to follow and participate regularly in lessons, even if they are a little sick, they will endeavor to come to school.
-                    What students are asked to :
-                    The study:
-                    Students should be used for personal study. Remind them that they came to study. They must be responsible.</p>
+                    Les parents peuvent payer les frais de scolarité (frais de scolarité) et les enseignants dispensent des cours (ou inculquent des connaissances) mais sans la volonté de l'élève avec une bonne réussite scolaire ne peut être tenu
+                    Faire tous les devoirs assignés est l'un des meilleurs moyens efficaces et le meilleur moyen d'obtenir de bons résultats à l'école.
+                    Même si les fonctions ne sont pas énumérées pour la promotion de classe, il s'agit cependant d'un exercice profitable pour l'avancement des connaissances. Cela permettra aux étudiants de bien travailler dans les tests et les examens.
+                    Cette pratique inculque aux élèves l'idée que les règles à l'école. Assister régulièrement aux cours: les étudiants ont toujours à l'esprit qu'ils doivent participer aux cours en permanence. Ils doivent avoir soif de suivre et participer régulièrement aux cours, même s'ils sont un peu malades, ils s'efforceront de venir à l'école.
+                    Ce que les élèves sont invités à:
+                    L'étude:
+                    Les étudiants doivent être utilisés pour des études personnelles. Rappelez-leur qu'ils sont venus étudier. Ils doivent être responsables. </p>
                 </div>
             </div>
         </div>
@@ -94,7 +75,7 @@
             <div class="message">
                 <img src="../assets/images/Image27.jpg" alt="">
                 <div class="text">
-                    <h1>Duties of Teachers</h1>
+                    <h1>Tâches des enseignants</h1>
                 <p id="dutiesTeachers">Students should understand the role they must play in their own success. Students are the backbone of a good academic success because all other factors are complete.
                     Parents can pay school fees (tuition fees) and teachers provide lessons (or instill knowledge) but without the will of the student with a good academic achievement can not be held
                     Do all homework assigned is one of the best effective ways and the best way to get good results at school.
@@ -162,9 +143,3 @@
             </div>
 
         </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js" integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
-    <script src="../js/strategy.js"></script>
-</body>
-</html>

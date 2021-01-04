@@ -19,3 +19,11 @@ function internalServerLoad(id,place){
    client.send();
 
 }
+function FRENCH(){
+        var client = new XMLHttpRequest();
+        client.open('GET', '..//helperFiles/strategyHelpFile.txt');
+        client.onreadystatechange = function(){
+                document.getElementsByClassName('content')[0].innerHTML = client.responseText;
+        }
+        client.send();
+}
