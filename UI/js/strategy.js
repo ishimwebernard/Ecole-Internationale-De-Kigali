@@ -6,3 +6,16 @@ const tweenMax = new TimelineMax();
 tweenMax.fromTo(pr,1.5,{y:"-100%"},{y:"0%"})
         .fromTo(row1,1,{y:0},{opacity:1},"-=.1")
         .fromTo(cover,.3,{y:"100%"},{y:"0%"},"-=2.3");
+internalServerLoad('dutiesParents', '../helperFiles/parentsrole.txt');
+internalServerLoad('staffRoles','../helperFiles/staffrole.txt');
+internalServerLoad('dutiesTeachers','../helperFiles/teachersrole.txt');
+internalServerLoad('dutiesStudent','../helperFiles/studentsrole.txt');
+function internalServerLoad(id,place){
+   var client = new XMLHttpRequest();
+   client.open('GET', place);
+   client.onreadystatechange = function(){
+           document.getElementById(id).innerHTML = client.responseText;
+   }
+   client.send();
+
+}

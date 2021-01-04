@@ -3,6 +3,7 @@
     font-family: "Open Sans";
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 .content{
     width: 100%;
@@ -83,6 +84,30 @@
     margin-left: 10%;
     margin-top: 1rem;
 }
+.content .principle .advert{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.content .principle .advert .gif{
+    width: 90%;
+}
+.content .principle .schoolDescription h1{
+    color: #FFB51B;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.content .principle .schoolDescription h2{
+    margin-left: .5rem;
+
+}
+.content .principle .schoolDescription p{
+    opacity: 90%;
+}
+
+
+
 .content .principle video{
     background-color: #000;
     width: 99%;

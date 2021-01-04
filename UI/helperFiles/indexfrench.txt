@@ -11,25 +11,16 @@
 <body>
     
     <div class="content">
-        <div class="fillerMain" id="fillerMain"> </div>
-        <div class="dutiesContainer" id="dutiesContainer">
-            <h1 class="title" id="title">jabvjhbajhkbv</h1>
-            <div class="mm">
-            <p class="text" id="text">sfvjbnlkjbnsdjkv</p>
-            </div>
-            <button onclick="dismiss()">Ok</button>
-
-        </div>
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
-                <p class="mobileNavItem" onclick="location.href=`../index.html`">Home</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Our School</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Strategy</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environment</p>
-                <p class="mobileNavItem" onclick="location.href=`#`">Health and safety</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Student Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href=`#`">Santé et sécurité</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Video Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
 
             </div>
             <div class="empty" onclick="revealHideMobileMenu()"> </div>
@@ -38,14 +29,14 @@
             <img src="./assets/images/schoollogo.png" id="schoollogo" alt="" class="logo">
             <div class="navgroup" id="navgroup">
                 <div class="navItems">
-                    <p class="navItem" onclick="location.href=`index.html`">Home</p>
-                    <p class="navItem" onclick="location.href=`./pages/ourschool.html`">Our School</p>
-                    <p class="navItem" onclick="location.href=`./pages/strategy.html`">Strategy</p>
-                    <p class="navItem" onclick="location.href=`./pages/environment.html`">Environment</p>
-                    <p class="navItem">Health and Safety</p>
-                    <p class="navItem" onclick="location.href=`./pages/onlineportal.html`">Student Portal</p>
-                    <p class="navItem" onclick="location.href=`./pages/contactus.html`">Contact</p>
-                    <p class="navItem" onclick="location.href=`./pages/videoportal.html`">Video Portal</p>
+                   <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href=`#`">Santé et sécurité</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
                 </div>
                 <div class="hamburger" onclick="revealHideMobileMenu()">
                     <div class="line"> </div>
@@ -59,19 +50,19 @@
             <div class="slide fade" id="fade1">
                 <div class="filler">
                 </div>
-                <p>Where everyone is <span>welcome</span></p>
+                <p>Où tout le monde est<span>Bienvenue</span></p>
 
             </div>
             <div class="slide fade" id="fade2">
                 <div class="filler">
                 </div>
-                <p>A place for <span>everyone</span></p>
+                <p>Un endroit pour<span>tout le monde</span></p>
 
             </div>
             <div class="slide fade"id="fade3">
                 <div class="filler">
                 </div>
-                <p>A pitch for <span>performance</span></p>
+                <p>Un pitch pour<span>performance</span></p>
 
             </div>
         </div>
@@ -80,26 +71,26 @@
                 <h3 class="title">Ecole International de KIGALI</h3>
             </div>
             <p class="welcomesession" id="welcomesession">
-                The idea of ​​opening a school was created in 1997 to meet the needs of parents who wanted their children to attend classes in French, while institutions can respond were restricted or overloaded. Moreover parents Kigali does not have time to study and monitor their children’s homework at home due to their occupations.     <br><br><br>Ecole International de Kigali        </p>
+L'idée d'ouvrir une école a été créée en 1997 pour répondre aux besoins des parents qui souhaitaient que leurs enfants suivent des cours en français, alors que les institutions pouvant répondre étaient restreintes ou surchargées. De plus, les parents de Kigali n’ont pas le temps d’étudier et de suivre les devoirs de leurs enfants à la maison en raison de leur profession. <br> <br> <br> Ecole Internationale de Kigali </p>
 
             
         </div>
         <div class="row3">
             <div class="titles">
-                <h3 class="title">We are task oriented</h3>
+                <h3 class="title">Nous sommes orientés tâches</h3>
             </div>
             <div class="card-au-pair">
-                <div class="card" onclick="showPopup(`Students`, `./helperFiles/staffrole.txt`)">
+                <div class="card">
                     <img src="./assets/images/studentavatar.png" alt="" class="cardimage">
                     <div class="textContainer">
                         <h3>Students</h3>
                         <div class="cardline"></div>
                         <p>
                             Student should understand their role in their own success.
-                            Students are the backbone of a good academic success </p>
+                            Students are the backbone of a good academic success                        </p>
                     </div>
                 </div>
-                <div class="card" onclick="showPopup(`The teacher`, `./helperFiles/staffrole.txt`)">
+                <div class="card">
                     <img src="./assets/images/teacher.png" alt="" class="cardimage">
                     <div class="textContainer">
                         <h3>The teacher</h3>
@@ -110,17 +101,17 @@
                 </div>
             </div>
             <div class="card-au-pair">
-                <div class="card" onclick="showPopup(`Staff duties`, `./helperFiles/staffrole.txt`)">
+                <div class="card">
                     <img src="./assets/images/environment.png" alt="" class="cardimage">
-                    <div class="textContainer" >
+                    <div class="textContainer">
                         <h3>Staff</h3>
                         <div class="cardline"></div>
                         <p>
-                            Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals, dedicated to the spiritual, academic, physical and social well being of our students.
+                            Student should understand their role in their own success. Students are the backbone
                         </p>
                     </div>
                 </div>
-                <div class="card" onclick="showPopup(`Parents`, `./helperFiles/parentsrole.txt`)">
+                <div class="card">
                     <img src="./assets/images/parents.png" alt="" class="cardimage">
                     <div class="textContainer">
                         <h3>Parents</h3>
@@ -412,33 +403,6 @@ function displayPrevious(){
     galleryImages[index-2].style.display = "block";
     index = index -1;
     }
-}
-function showPopup(title, content){
-    var fillerMain = document.getElementById('fillerMain');
-    var dutiesContainer = document.getElementById('dutiesContainer');
-    var titleView = document.getElementById('title');
-    var textView = document.getElementById('text');
-
-    fillerMain.style.display = "block";
-    dutiesContainer.style.display = "block";
-    titleView.innerHTML = String(title);
-    textView.innerHTML = String(content);
-    console.log(title);
-    console.log(content);
-
-    var client = new XMLHttpRequest();
-    client.open('GET', String(content));
-    client.onreadystatechange = function(){
-        textView.innerHTML = client.responseText;
-    }
-    client.send();
-
-}
-function dismiss(){
-    var fillerMain = document.getElementById('fillerMain');
-    var dutiesContainer = document.getElementById('dutiesContainer');
-    fillerMain.style.display = "none";
-    dutiesContainer.style.display = "none";
 }
 
 </script>

@@ -1,3 +1,4 @@
+switchTab(0);
 function switchTab(n){
     var _CARD = document.getElementsByClassName('CARD');
     var _CNAV = document.getElementsByClassName('gallerynavigatorItem');

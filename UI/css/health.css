@@ -8,8 +8,7 @@
 .content{
     width: 100%;
     height: 100%;
-}
-.row1{
+}.row1{
     display: flex;
     flex-direction: row;
     padding-left: 8.18042813455657%;
@@ -77,7 +76,7 @@
     cursor: pointer;
     text-shadow: .5px .5px #fff;
 }
-.row1 .navgroup .navItems .navItem:nth-child(3){
+.row1 .navgroup .navItems .navItem:nth-child(4){
     color: #fdad00;
 }
 
@@ -145,75 +144,241 @@
     margin-top: 1rem;
     margin-left: 10%;
 }
-.presenter{
+
+
+.CARD{
+    display: flex;
     width: 100%;
-    height: 570px;
-    opacity: 80%;
-    background: #000;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation-name: _CARDANIMATION;
+    animation-duration: 1s;
 }
-.header p{
-    position: absolute;
-    color: #fff;
-    font-size: 4rem;
-    top: 18rem;
+@keyframes _CARDANIMATION{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.CARD .imageSet{
+    height: 20rem;
     width: 100%;
-    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   transform: skew(0deg,3deg);
+
 }
-.header .cover{
-    background-color: #000;
+.CARD  .imageSet img{
+    /* transform: skew(0deg, 150deg); */
     width: 100%;
-    height: 35rem;
-    opacity: 40%;
-    position: absolute;
-    top: 8.4rem;
-}
-.header span{
-    color: #fff;
-    font-size: 4rem;
-    font-weight: 700;
-    color: #fdad00;
+    object-fit: cover;
 }
 
-.messagecouple{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
+.CARD h2{
+    font-size: 3rem;
+    vertical-align: center;
+    text-align: center;
+    width: 100%;
+    color: #000;
+    font-weight: 300;
+    margin-top: 3rem;
+}
+
+/* ROW 2 STUFFS */
+.row2{
+    background: linear-gradient(45deg, #D4F6F6, #EBF7F8);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+}
+.row2 p{
     margin-left: 5.65749235474006%;
     margin-right: 5.65749235474006%;
     margin-top: 2rem;
-
-
+    font-size: 1.3rem;
 }
-.tit{
+
+
+.row12{
     width: 100%;
-    text-align: center;
+}
+.row12 img{
+    width: 100%;
+    height: 30rem;
+}
+
+/* ROW 3 */
+.row3 {
+    padding-left: 5.65749235474006%;
+    padding-right: 5.6574923547400%;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+.row3 .card-au-pair{
+    display: flex;
+    flex-direction: row;
     margin-top:3rem;
-    font-size: 4rem;
-    color: #4b4b4b;
 }
-.messagecouple .message{
+.row3 .card-au-pair .card{
+    background: linear-gradient(45deg, #F3F9F9,#FEF8EA);
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    padding: 2rem;
+}
+.row3 .card-au-pair .card .textContainer{
+    margin-left: 10%;
+}
+
+.row3 .card-au-pair .card img{
+    height: 4.3125rem;
+}
+
+
+
+/*IMAGES FOR SLIDESHOW*/
+#fade2{
+    background-image: url('../assets/images/Image45.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#fade3{
+    background-image: url('../assets/images/Image27.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.row4{
+    background-color: #fdad00;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+.row4 .session{
+    margin-top: 3rem;
+    background: linear-gradient(45deg, #5c4c2b, #2b2210);
+    display: flex;
+    flex-direction: column;
+    margin-left: 5.65749235474006%;
+    margin-right: 5.6574923547400%;
+    padding: 2rem .5rem 2rem .5rem;
+   
+
+}
+.row4 .session span{
+    font-weight: 700;
+    font-size: 2rem;
+
+}
+.row4 .session h2{
+    color: #fff;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.row4 .session p{
+    color: #F3F9F9;
+    margin-top: .5rem;
+}
+.row5 .eventcard{
+    border: 1px #000 solid;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    margin-left: 5.65749235474006%;
+    margin-right: 5.6574923547400%;
+
+}
+.row5 .eventcard .indicator p{
+    background: #fd008b;
+    width: 10%;
+    padding: .5%;
+    color: #fff;
+    font-weight: 700;
+}
+.row5 .eventcard .eventcontainer{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    margin-left: 5%;
+
+
+}
+.row6{
+    background: linear-gradient(-45deg, #F3FAF9, #FEF8EB);
+    margin-top: 3rem;
+    padding-left: 5.65749235474006%;
+    align-content: center;
+    padding-bottom: 3rem;
+}
+.main .gallerynavigator{
+    display: flex;
+    flex-direction: row;
+    background: #fff;    
+    align-self: center;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 7.65749235474006%;
+    border-top: .5px #000 solid;
+    margin-right: 10.65749235474006%;
+    margin-bottom: 3rem;
+
+
+}
+.main p{
+    font-weight: 700;
+    color: rgb(80, 80, 80);
+    opacity: 70%;
+    font-size: 1rem;
+
+}
+.main .gallerynavigator .gallerynavigatorItem{
+    padding-left: 5%;
+    padding-right: 35px;
+    cursor: pointer;
+    height: 100%; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1rem;
+}
+.main .gallerynavigator .gallerynavigatorItem:last-child{
+    border: none;
+}
+.main .gallerynavigator .gallerynavigatorItem:first-child{
+    background: #000;
+    color: #fff;
+}
+.main .gallerynavigator .gallerynavigatorItem:hover{
+    background: #000;
+    color: #fff;
+}
+.row6 .photoGalery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    margin-right: 5.65749235474006%;
+
+}
+.row6 .photoGalery img{
     width: 90%;
-display: flex;
-flex-direction: column;  
-background-color: rgb(250, 250, 250) ;  
-border: 1px rgb(238, 238, 238) solid;
+    height:17.5rem;
 }
-.messagecouple img{
-    height:20rem;
-    width:100%;
-
+.row6 .photoGalery img:hover{
+    opacity: 90%;
 }
-.messagecouple .message .text{
-    padding-left: 4rem;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    padding-bottom:3rem;
+.CARD p{
+    margin-left: 10%;
+    margin-right: 20%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    opacity: 100%;
 }
-
-
-
-
-
-
 
 .footer{
     background: #0F3B24;

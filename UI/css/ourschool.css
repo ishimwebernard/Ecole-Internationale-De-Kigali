@@ -160,12 +160,11 @@
     to{opacity: 1;}
 }
 .CARD .presenter{
-    background-image: url('../assets/images/Image27.jpg');
-    height: 20rem;
+    height: 30rem;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #000;
+
     display: flex;
     flex-direction: column; 
 }
@@ -370,6 +369,8 @@
     margin-right: 20%;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    font-weight: 500;
+    opacity: 100%;
 }
 
 .footer{
