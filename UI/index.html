@@ -14,8 +14,8 @@
         <div class="buttonLanguage">
             <div class="e"></div>
            <div class="set">
-            <button onclick="French()">Fr</button>
-            <button onclick="location.href='./index.html'">En</button>
+            <img src="https://www.countryflags.io/fr/shiny/64.png"  onclick="French()"></img>
+            <img src="https://www.countryflags.io/GB/shiny/64.png"  onclick="location.reload()"></img>
            </div>
         </div>
         <div class="fillerMain" id="fillerMain"> </div>
@@ -33,7 +33,7 @@
                 <p class="mobileNavItem" onclick="location.href=`./pages/ourschool.html`">Our School</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Strategy</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environment</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Student Portal</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal.html`">Student Portal</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Video Portal</p>
 
@@ -85,8 +85,7 @@
                 <h3 class="title">Ecole International de KIGALI</h3>
             </div>
             <p class="welcomesession" id="welcomesession">
-                The idea of ​​opening a school was created in 1997 to meet the needs of parents who wanted their children to attend classes in French, while institutions can respond were restricted or overloaded. Moreover parents Kigali does not have time to study and monitor their children’s homework at home due to their occupations.     <br><br><br>Ecole International de Kigali        </p>
-
+                The idea of starting the school came around in 1997 in order to facilitate parents who wanted their children to attend classes that used the French education system, and the institutions using the same education system were limited or overcrowded. Moreover, due to various occupations at the time, parents in Kigali did not have enough time to follow up on their children’s school-related tasks such as homework among others. So, they wanted a school to entrust their children with; and Ecole Internationale de Kigali was established to embrace the needs of the parents through good education with state-of-the-art facilities. 
             
         </div>
         <div class="row3" id="row3">
@@ -110,8 +109,7 @@
                         <h3>The teacher</h3>
                         <div class="cardline"></div>
                         <p>
-                            A teacher must be a teacher educator more. Hold the required documents. It must continually self-training. "It is only gives what is a".                        </p>
-                    </div>
+                            A teacher must be more of a facilitator to prepare his/her learners on how to cope with the competitive world, must meet the standard requirements for good education delivery.                     </div>
                 </div>
             </div>
             <div class="card-au-pair">
@@ -121,8 +119,7 @@
                         <h3>Staff</h3>
                         <div class="cardline"></div>
                         <p>
-                            Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals, dedicated to the spiritual, academic, physical and social well being of our students.
-                        </p>
+                            Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals dedicated to the spiritual, academic, physical and social well-being of our students.                         </p>
                     </div>
                 </div>
                 <div class="card" onclick="showPopup(`Parents`, `./helperFiles/parentsrole.txt`)">
@@ -131,21 +128,20 @@
                         <h3>Parents</h3>
                         <div class="cardline"></div>
                         <p>
-                            Parents should regularly check the work of their child. Provide basic materials such as books, notebooks, etc.. Promote discipline and cultural values​​.                        </p>
-                    </div>
+                            Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals dedicated to the spiritual, academic, physical and social well-being of our students.                     </div>
                 </div>
             </div>
         </div>
         <div class="row4">
             <div class="titles">
-                <h3 class="title">Our Sessions</h3>
+                <h3 class="title">Our Sections</h3>
             </div>
             <div class="session">
                 <div class="floater">
                     <h2>Primary <span>School</span></h2>
                 </div>
                 <p class="sessioncontent">
-                    Primary education provides learning and educational activities typically designed to provide students with fundamental skills in reading, writing and mathematics (i.e. literacy and numeracy), and to establish a sound foundation for learning and solid understanding of core areas of knowledge            </div>
+                    Primary education provides learning and educational activities typically designed to provide students with fundamental skills in reading, writing and mathematics (i.e., literacy and numeracy), and to establish a sound foundation for learning and solid understanding of the core areas of knowledge.          </div>
             <div class="session">
                 <div class="floater">
                     <h2>Nursery <span>School</span></h2>
@@ -369,6 +365,15 @@ window.addEventListener("scroll", function() {
   var galery = document.getElementById('photoGalery');
   var index = 0;
 
+  var cookies = document.cookie
+                .split(';')
+                .map(cookie => cookie.split('='))
+                .reduce((accumulator, [key, value]) => ({
+                    ...accumulator,
+                    [key.trim()]: decodeURIComponent(value)
+                }), {});
+                
+
   var listRef = firebase.storage().ref().child('eikcorrected');
 // Find all the prefixes and items.
 listRef.listAll().then(function(res) {
@@ -450,9 +455,8 @@ function French(){
                 <p class="mobileNavItem" onclick="location.href=''../index.html'">Accueil</p>
                 <p class="mobileNavItem" onclick="location.href='./pages/ourschool.html'">Notre école</p>
                 <p class="mobileNavItem" onclick="location.href='../pages/strategy.html'">Stratégie</p>
-                <p class="mobileNavItem" onclick="location.href='../pages/environment.html'">Environnement</p>
-                <p class="mobileNavItem" onclick="location.href='#'">Santé et sécurité</p>
-                <p class="mobileNavItem" onclick="location.href='../pages/onlineportal'">Portail étudiant</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/health.html'">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href='../pages/onlineportal.html'">Portail étudiant</p>
                 <p class="mobileNavItem" onclick="location.href='../pages/contactus.html'">Contact</p>
                 <p class="mobileNavItem" onclick="location.href='../pages/videoportal.html'">Portail vidéo</p>
 
@@ -463,12 +467,11 @@ function French(){
     <div class="navItems">
                 <p class="navItem" onclick="location.href=''../index.html'">Accueil</p>
                 <p class="navItem" onclick="location.href='./pages/ourschool.html'">Notre école</p>
-                <p class="navItem" onclick="location.href='../pages/strategy.html'">Stratégie</p>
-                <p class="navItem" onclick="location.href='../pages/environment.html'">Environnement</p>
-                <p class="navItem" onclick="location.href='#'">Santé et sécurité</p>
-                <p class="navItem" onclick="location.href='../pages/onlineportal'">Portail étudiant</p>
-                <p class="navItem" onclick="location.href='../pages/contactus.html'">Contact</p>
-                <p class="navItem" onclick="location.href='../pages/videoportal.html'">Portail vidéo</p>
+                <p class="navItem" onclick="location.href='./pages/strategy.html'">Stratégie</p>
+                <p class="navItem" onclick="location.href='./pages/health.html'">Environnement</p>
+                <p class="navItem" onclick="location.href='./pages/onlineportal.html'">Portail étudiant</p>
+                <p class="navItem" onclick="location.href='./pages/contactus.html'">Contact</p>
+                <p class="navItem" onclick="location.href='./pages/videoportal.html'">Portail vidéo</p>
 
             </div>
             <div class="hamburger" onclick="revealHideMobileMenu()">
@@ -628,6 +631,7 @@ Les parents doivent vérifier régulièrement le travail de leur enfant. Fournir
              <input type="text" placeholder="Enter your email">
              <button>Souscrire</button>
             </div>`;
+            document.cookie = "_EIKLAN=fr";
             
 }
 

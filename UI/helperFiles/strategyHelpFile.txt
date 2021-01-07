@@ -1,11 +1,17 @@
     <div class="content">
+       <div class="buttonLanguage">
+            <div class="e" ></div>
+           <div class="set">
+        <img src="https://www.countryflags.io/fr/shiny/64.png"  onclick="FRENCH()"></img>
+            <img src="https://www.countryflags.io/GB/shiny/64.png"  onclick="location.reload()"></img>
+           </div>
+        </div>
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
                  <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
-                <p class="mobileNavItem" onclick="location.href=`#`">Health and safety</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/health.html`">Environnement</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
@@ -20,8 +26,7 @@
                        <p class="navItem" onclick="location.href=`../index.html`">Accueil</p>
                 <p class="navItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
                 <p class="navItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
-                <p class="navItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
-                <p class="navItem" onclick="location.href=`#`">Health and safety</p>
+                <p class="navItem" onclick="location.href=`../pages/health.html`">Environnement</p>
                 <p class="navItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
                 <p class="navItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
                 <p class="navItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>

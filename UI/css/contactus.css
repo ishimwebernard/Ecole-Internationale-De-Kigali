@@ -38,6 +38,13 @@
     width: 4.5%;
     display: none;
 }
+.buttonLanguage{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 12fr 1fr;
+    top: 0;
+    
+}
 
 .row1 .navgroup .line{
     background: rgb(75, 75, 75);
@@ -77,7 +84,7 @@
     cursor: pointer;
     text-shadow: .5px .5px #fff;
 }
-.row1 .navgroup .navItems .navItem:nth-child(7){
+.row1 .navgroup .navItems .navItem:nth-child(6){
     color: #fdad00;
 }
 

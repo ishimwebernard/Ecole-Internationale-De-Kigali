@@ -26,23 +26,6 @@ function revealHideMobileMenu(){
     }
 }
 
-
-
-window.addEventListener("scroll", function() {
-     var elementTarget = row2;
-     console.log("Scollin ...");
-    if (window.scrollY < (elementTarget.offsetTop + elementTarget.offsetHeight+10)) {
-        // var wc = document.getElementById('welcomesession');
-        // var titles = document.getElementById('titles');
-        // const row2Timeline = new TimelineMax();
-        // row2Timeline.fromTo(wc,1,{y:"-100%"},{y:"0%"})
-        // .fromTo(titles,1,{y:"100%"},{y:"0%"},"-=1");
-        // console.log("Boom");
-    }
-
-    
-  });
-
   function showSlides() {
     const _SLIDEANIMATOR = new TimelineMax();
     var i;

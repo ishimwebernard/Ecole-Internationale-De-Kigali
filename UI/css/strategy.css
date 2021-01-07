@@ -41,9 +41,14 @@ button{
     display: grid;
     grid-template-columns: 12fr 1fr;
     top: 0;
-    z-index: 4;
-    
+    z-index: 3;    
+    margin-left: 92%;
 }
+.buttonLanguage .e{
+  position: absolute;
+  margin-left: 91.6%;
+}
+
 .row1 .navgroup{
     /* padding: 1.1875rem 0 1.1875rem 0; */
     height: 100%;

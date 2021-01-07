@@ -17,13 +17,13 @@
     padding-top: 0.4375rem;
     padding-right: 8.18042813455657%;
     padding-bottom: 0.4375rem;
-    background: #D8E1E4;
+    background: linear-gradient(180deg,  #D8E1E4, #B3CAD1);
     width: 100%;
 
 }
 .row1 img{
     width: 10%;
-    height: 10rem;
+    height: 120px;
     
 }
 span{
@@ -82,6 +82,8 @@ span{
     flex-direction: row;
     width: 100%;
     font-size: 1rem;
+    text-shadow: .5px .5px #fff;
+
   
     
 }
@@ -105,7 +107,7 @@ span{
     opacity: 90%;
     cursor: pointer;
 }
-.row1 .navgroup .navItems .navItem:nth-child(6){
+.row1 .navgroup .navItems .navItem:nth-child(5){
     color: #fdad00;
 }
 

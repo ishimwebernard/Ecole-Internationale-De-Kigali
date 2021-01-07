@@ -5,9 +5,8 @@
                 <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
-                <p class="mobileNavItem" onclick="location.href=`#`">Santé et sécurité</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/health.html`">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal.html`">Portail étudiant</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
 
@@ -21,9 +20,8 @@
                    <p class="mobileNavItem" onclick="location.href=`../index.html`">Accueil</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/ourschool.html`">Notre école</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/strategy.html`">Stratégie</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/environment.html`">Environnement</p>
-                <p class="mobileNavItem" onclick="location.href=`#`">Santé et sécurité</p>
-                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal`">Portail étudiant</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/health.html`">Environnement</p>
+                <p class="mobileNavItem" onclick="location.href=`../pages/onlineportal.html`">Portail étudiant</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/contactus.html`">Contact</p>
                 <p class="mobileNavItem" onclick="location.href=`../pages/videoportal.html`">Portail vidéo</p>
                 </div>
