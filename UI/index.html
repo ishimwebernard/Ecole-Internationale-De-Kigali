@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./css/index.css">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
-    <title>Ecole International De Kigali</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+        <title>Ecole International De Kigali</title>
 </head>
 <body>
     
@@ -132,6 +132,26 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="row35">
+            <div class="headersamplevideoportal">
+                <h1>See all cluters in video</h1>
+                <a href="./pages/videoportal.html">Visit the video portal</a>
+            </div>
+            <div class="vider">
+                <div class="video">
+                    <img src="" alt="">
+                    <p>Title</p>
+                </div>
+                <div class="video">
+                    <img src="" alt="">
+                    <p>Title</p>
+                </div>
+                <div class="video">
+                    <img src="" alt="">
+                    <p>Title</p>
+                </div>
+            </div>
+        </div> -->
         <div class="row4">
             <div class="titles">
                 <h3 class="title">Our Sections</h3>
@@ -149,6 +169,28 @@
                 <p class="sessioncontent">
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors                 </p>
             </div>
+        </div>
+        <div class="row6" id="gallery">
+            <div class="titles">
+                <h3 class="title">Gallery</h3>
+            </div>
+<!-- 
+            <div class="gallerynavigator">
+                <p class="gallerynavigatorItem">All</p>
+                <p class="gallerynavigatorItem">Classrooms</p>
+                <p class="gallerynavigatorItem">Library</p>
+                <p class="gallerynavigatorItem">Campus</p>
+            </div> -->
+            <div class="photoGalery" id="photoGalery">
+                <img src="./assets/images/slideshare1.png" class="galleryImage">
+                <img src="./assets/images/slideshare1.png" class="galleryImage">
+            </div>
+            <div class="galleryControlls">
+                <img onclick="displayNext()" style="transform: rotate(180deg);" src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"/>
+                <img onclick="displayPrevious()" src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"/>
+            </div>
+           
+
         </div>
         <div class="row5">
             <div class="titles">
@@ -192,28 +234,7 @@
             </div>
 
         </div>
-        <div class="row6" id="gallery">
-            <div class="titles">
-                <h3 class="title">Gallery</h3>
-            </div>
-<!-- 
-            <div class="gallerynavigator">
-                <p class="gallerynavigatorItem">All</p>
-                <p class="gallerynavigatorItem">Classrooms</p>
-                <p class="gallerynavigatorItem">Library</p>
-                <p class="gallerynavigatorItem">Campus</p>
-            </div> -->
-            <div class="photoGalery" id="photoGalery">
-                <img src="./assets/images/slideshare1.png" class="galleryImage">
-                <img src="./assets/images/slideshare1.png" class="galleryImage">
-            </div>
-            <div class="galleryControlls">
-                <img onclick="displayNext()" style="transform: rotate(180deg);" src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"/>
-                <img onclick="displayPrevious()" src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"/>
-            </div>
-           
-
-        </div>
+   
         <div class="footer">
             <div class="footergroup">
                 <h2>Address</h2>
@@ -391,6 +412,8 @@ listRef.listAll().then(function(res) {
 }).catch(function(error) {
   console.log(error);
 });
+displayNext();
+displayNext();
 console.log(itemsinGallery);
 for(let item in itemsinGallery){
     console.log("I finished");
