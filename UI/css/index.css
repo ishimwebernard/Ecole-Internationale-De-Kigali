@@ -215,13 +215,50 @@ button{
 .row35{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 88.5%;
     padding-right: 5.65749235474006%;    
-    padding-left: 5.65749235474006%;    
+    padding-left: 5.65749235474006%;  
+    background-image: url('../assets/images/blackbg.jpg');  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .row35 .headersamplevideoportal{
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+.row35 .headersamplevideoportal .textIntroducer{
+    display: flex;
+    flex-direction: column;
+}
+.row35 .headersamplevideoportal .textIntroducer h1{
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.row35 .headersamplevideoportal .textIntroducer h2{
+    color: rgb(185, 185, 185);
+}
+.row35 .vider{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1rem;
+}
+
+.row35 .vider img{
+    background: #000;
+    height: 225px;
+    margin-bottom: .5rem;
+    overflow-y: hidden;
+}
+.row35 .vider .video{
+    width: 90%;
+}
+.row35 .vider .video p{
+    color: rgb(228, 228, 228);
+}
+.row35 a{
+    text-decoration: none;
+    color: #fdad00;
 }
 
 
