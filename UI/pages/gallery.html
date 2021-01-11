@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Portal</title>
+</head>
+<body>
+    <div class="content">
+        <div class="row1">
+            <img src="../assets/images/schoollogo.png" alt="">
+            <h1>Gallery</h1>
+            <button onclick="location.href=`../index.html`">Home</button>
+        </div>
+        <div class="row2">
+            <div class="left" id="left">
+                <div class="image">
+                    <img src="../assets/images/Image77.jpg" alt="">
+                    <p>Description</p>
+                </div>
+            </div>
+            <div class="right">
+                <img src="../assets/images/Image77.jpg" id="rightpic" alt="">
+            </div>
+        </div>
+      
+      
+      
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBLtbU8MWi_BHunfQ7b4a6JPad0Jdmeh9E",
+    authDomain: "ecole-internationale-dekigli.firebaseapp.com",
+    projectId: "ecole-internationale-dekigli",
+    storageBucket: "ecole-internationale-dekigli.appspot.com",
+    messagingSenderId: "669208960466",
+    appId: "1:669208960466:web:07897e417b95a689cb3c0b",
+    measurementId: "G-9EKFKSTZPN"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var _ALL_VIDEOS = [];
+      var row2 = document.getElementById('row2');
+      let itemsinGallery = [];
+      var tarr = [];
+      var left = document.getElementById('left');
+      var bigtext = ``;
+
+var listRef = firebase.storage().ref().child('eikcorrected');
+listRef.listAll().then(function(res) {
+    var tt = `<div class="pictureRow">`;
+    var i = 0;
+   res.items.forEach(function(itemRef, index, array) {
+       i += 1;
+      itemRef.getDownloadURL().then(url=>{
+        left.innerHTML+=`
+        <div class="image" onclick='lintURL("${url}")'>
+                    <img src="${url}">
+                    <p>Image ${index + 1}</p>
+                </div>
+          `;
+
+      }); 
+  }
+  );
+}).catch(function(error) {
+  console.log(error);
+});
+console.log('Over');
+
+function divideData(itGallery){
+    var gallerySize = itGallery.length;
+    var rows = (gallerySize - gallerySize%3)/3;
+    var row2 = document.getElementById('row2');
+    for(let c=0;c<(rows*3);c+=3){
+        row2.innerHTML += `
+        <div class="pictureRow" id="prow1">
+                <div class="picture" style="background-image: url("${gallerySize[c]}")">
+                    <p>Some Description</p>
+                </div>
+                <div class="picture" style="background-image: url("${gallerySize[c+1]}")">
+                    <p>Some Description</p>
+                </div>
+                <div class="picture" style="background-image: url("${gallerySize[c+2]}")">
+                    <p>Some Description</p>
+                </div>
+            </div>
+        `;
+    }
+
+} function showBigText(){
+    console.log(bigtext);
+}
+function lintURL(str){
+    console.log(str);
+    var rightpic = document.getElementById('rightpic');
+    rightpic.src = str;
+    document.getElementById('rightpic').scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+}
+
+   
+    </script>
+</body>
+</html>

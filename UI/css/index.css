@@ -20,6 +20,19 @@ button{
     font-size: 1.2rem;
     margin-top: 1rem;
 }
+.admissionopen{
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    text-align: center;
+    background-color: #0F3B24;
+}
+.admissionopen p{
+    color: #fff;
+    text-align: center;
+}
+
 .fillerMain{
     position: fixed;
     width: 100%;
@@ -292,11 +305,22 @@ button{
 
 /* ROW 3 */
 .row3 {
+    /* display: grid;
+    grid-template-columns: 3fr 1fr; */
     padding-left: 5.65749235474006%;
-    padding-right: 5.6574923547400%;
     margin-bottom: 3rem;
     margin-top: 3rem;
 }
+.row3 .mk{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.row3 .mk .mickey{
+    background: url('../assets/images/TeachingMickey.png');
+    background-size: cover;
+}
+
+
 .row3 .card-au-pair{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -389,6 +413,31 @@ button{
 .row5{
     padding-bottom: 7rem;
 }
+.banners{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.banners img{
+    object-fit: cover;
+    height: 10rem;
+    width: 97%;
+    margin-top: 1rem;
+}
+#photo{
+    background: url('../assets/images/triangles.png')
+}
+#photo h1{
+    color: #000;
+}
+#photo h2{
+    color: rgb(87, 87, 87);
+}
+#photo p{
+    color: rgb(87, 87, 87);
+
+}
+
+
 .row5 .eventcard{
     border: 1px #000 solid;
     display: flex;
@@ -431,6 +480,7 @@ button{
     padding-left: 5.65749235474006%;
     align-content: center;
     padding-bottom: 3rem;
+    display: none;
 }
 .row6 .gallerynavigator{
     display: flex;

@@ -11,6 +11,7 @@
 <body>
     
     <div class="content" id="mainContent">
+    
         <div class="buttonLanguage">
             <div class="e"></div>
            <div class="set">
@@ -25,7 +26,6 @@
             <p class="text" id="text">sfvjbnlkjbnsdjkv</p>
             </div>
             <button onclick="dismiss()">Ok</button>
-
         </div>
         <div class="mobilemenu" id="mobilemenu">
             <div class="mainNavItems">
@@ -60,6 +60,7 @@
                 </div>
             </div>
         </div>
+      
         <div class="row12" id="slide">
             <div class="slide fade" id="fade1">
                 <div class="filler">
@@ -87,7 +88,7 @@
             <p class="welcomesession" id="welcomesession">
                 The idea of starting the school came around in 1997 in order to facilitate parents who wanted their children to attend classes that used the French education system, and the institutions using the same education system were limited or overcrowded. Moreover, due to various occupations at the time, parents in Kigali did not have enough time to follow up on their children’s school-related tasks such as homework among others. So, they wanted a school to entrust their children with; and Ecole Internationale de Kigali was established to embrace the needs of the parents through good education with state-of-the-art facilities. 
             
-        </div>
+        </div> 
         <div class="row4">
             <div class="titles">
                 <h3 class="title">Our Sections</h3>
@@ -106,50 +107,85 @@
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors                 </p>
             </div>
         </div>
+        <div class="row35" id="photo">
+            <div class="headersamplevideoportal">
+                <div class="textIntroducer">
+                    <h1>Gallery - Images Portal</h1>
+                    <h2>View all information in Pictures</h2>
+                </div>
+                <a href="./pages/gallery.html">Visit the Gallery here</a>
+            </div>
+            <div class="vider">
+                <div class="video" onclick="location.href=`./pages/videoportal.html`">
+                    <img src="./assets/images/Image45.jpg" alt="">
+                    <p>See how students do their learning at Ecole internationale</p>
+                </div>
+                <div class="video">
+                    <img src="./assets/images/Image3.jpg" alt="">
+                    <p>See the history of the school</p>
+                </div>
+                <div class="video">
+                    <img src="./assets/images/Image4.jpg" alt="">
+                    <p>See the infrastructure of the school</p>
+                </div>
+            </div>
+        </div> 
+
         <div class="row3" id="row3">
             <div class="titles">
                 <h3 class="title">We are task oriented</h3>
             </div>
-            <div class="card-au-pair">
-                <div class="card" onclick="showPopup(`Students`, `./helperFiles/staffrole.txt`)">
-                    <img src="./assets/images/studentavatar.png" alt="" class="cardimage">
-                    <div class="textContainer">
-                        <h3>Students</h3>
-                        <div class="cardline"></div>
-                        <p>
-                            Student should understand their role in their own success.
-                            Students are the backbone of a good academic success </p>
+         <div class="mk">
+            <div class="cards">
+                <div class="card-au-pair">
+                    <div class="card" onclick="showPopup(`Students`, `./helperFiles/staffrole.txt`)">
+                        <img src="./assets/images/studentavatar.png" alt="" class="cardimage">
+                        <div class="textContainer">
+                            <h3>Students</h3>
+                            <div class="cardline"></div>
+                            <p>
+                                Student should understand their role in their own success.
+                                Students are the backbone of a good academic success </p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="showPopup(`The teacher`, `./helperFiles/staffrole.txt`)">
+                        <img src="./assets/images/teacher.png" alt="" class="cardimage">
+                        <div class="textContainer">
+                            <h3>The teacher</h3>
+                            <div class="cardline"></div>
+                            <p>
+                                A teacher must be more of a facilitator to prepare his/her learners on how to cope with the competitive world, must meet the standard requirements for good education delivery.                     </div>
                     </div>
                 </div>
-                <div class="card" onclick="showPopup(`The teacher`, `./helperFiles/staffrole.txt`)">
-                    <img src="./assets/images/teacher.png" alt="" class="cardimage">
-                    <div class="textContainer">
-                        <h3>The teacher</h3>
-                        <div class="cardline"></div>
-                        <p>
-                            A teacher must be more of a facilitator to prepare his/her learners on how to cope with the competitive world, must meet the standard requirements for good education delivery.                     </div>
-                </div>
-            </div>
-            <div class="card-au-pair">
-                <div class="card" onclick="showPopup(`Staff duties`, `./helperFiles/staffrole.txt`)">
-                    <img src="./assets/images/environment.png" alt="" class="cardimage">
-                    <div class="textContainer" >
-                        <h3>Staff</h3>
-                        <div class="cardline"></div>
-                        <p>
-                            Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals dedicated to the spiritual, academic, physical and social well-being of our students.                         </p>
+                <div class="card-au-pair">
+                    <div class="card" onclick="showPopup(`Staff duties`, `./helperFiles/staffrole.txt`)">
+                        <img src="./assets/images/environment.png" alt="" class="cardimage">
+                        <div class="textContainer" >
+                            <h3>Staff</h3>
+                            <div class="cardline"></div>
+                            <p>
+                                Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals dedicated to the spiritual, academic, physical and social well-being of our students.                         </p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="showPopup(`Parents`, `./helperFiles/parentsrole.txt`)">
+                        <img src="./assets/images/parents.png" alt="" class="cardimage">
+                        <div class="textContainer">
+                            <h3>Parents</h3>
+                            <div class="cardline"></div>
+                            <p>
+                                Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals dedicated to the spiritual, academic, physical and social well-being of our students.                     </div>
                     </div>
                 </div>
-                <div class="card" onclick="showPopup(`Parents`, `./helperFiles/parentsrole.txt`)">
-                    <img src="./assets/images/parents.png" alt="" class="cardimage">
-                    <div class="textContainer">
-                        <h3>Parents</h3>
-                        <div class="cardline"></div>
-                        <p>
-                            Ecole internationale de Kigali is fortunate to employ a team of fully qualified professionals dedicated to the spiritual, academic, physical and social well-being of our students.                     </div>
-                </div>
-            </div>
+              </div>
+              <div class="mickey">
+                  
+              </div>
+         </div>
         </div>
+        <div class="banners">
+            <img src="./assets/gifs/gif3.gif" alt="">
+            <img src="./assets/gifs/gif4.gif" alt="">
+        </div> 
        <div class="row35">
             <div class="headersamplevideoportal">
                 <div class="textIntroducer">
@@ -660,6 +696,13 @@ Les parents doivent vérifier régulièrement le travail de leur enfant. Fournir
             </div>`;
             document.cookie = "_EIKLAN=fr";
             
+}
+function positionFloater(){
+    var row1 = document.getElementsByClassName('row1')[0];
+    var ch = row1.offsetHeight;
+    let admissionopen = document.getElementsByClassName('admissionopen')[0];
+    admissionopen.style.marginTop = ch+"px";
+
 }
 
 </script>

@@ -1,0 +1,92 @@
+*{
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    /* background-image: url('../assets/images/blackbg.jpg'); */
+}
+button{
+    padding: .5rem 1rem .5rem 1rem;
+    color: #fff;
+    background: linear-gradient(180deg, #FFD885,#FFB51B);
+    border-radius: 5px;
+    color: #474747;
+    font-weight: 700;
+    border: 1px rgb(80, 95, 80) solid;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.content .row1{
+    background: linear-gradient(180deg,  #D8E1E4, #B3CAD1);
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+}
+.content .row1 button{
+    margin-left: 50%;
+    height: 30%;
+    vertical-align: center;
+    margin-top: 2.5rem;
+}
+.content .row1 h1{
+    color: #000;
+    font-size: 2rem;
+   margin-top: 2.5rem;
+   text-shadow: 1px 1px #fff;
+   font-weight: 700;
+}
+.content .row2{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    ;
+}
+.content .row2 .left{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.content .row2 .left .image{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-top: .5rem;
+    border-radius: .5rem;
+}
+.content .row2 .left .image img{
+    width: 50px;
+    height: 50px;
+} 
+.content .row2 .left .image p{
+    vertical-align: center;
+    margin-top: 17.5px;
+}
+.content .row2 .left .image:hover{
+    background: linear-gradient(180deg, rgb(203, 245, 224), rgb(162, 190, 175))
+}
+.content .row2 .right{
+   
+
+}
+.content .row2 .right img{
+    height: 30rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
